@@ -82,3 +82,48 @@
 2022-02-17 13:58:11.891 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
 2022-02-17 13:58:13.382 -05:00 [INF] Displaying SelectCustomerMenu to user
 2022-02-17 13:58:15.788 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-17 14:10:56.280 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-17 14:10:59.674 -05:00 [INF] Displaying MainMenu to user
+2022-02-17 14:11:00.799 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-17 14:11:02.762 -05:00 [INF] Displaying MainMenu to user
+2022-02-17 14:11:14.412 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 14:11:15.346 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-17 14:11:22.549 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 14:11:24.981 -05:00 [INF] Displaying MainMenu to user
+2022-02-17 14:39:11.362 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 14:39:20.252 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-17 14:39:24.208 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-17 15:33:53.528 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 15:33:55.817 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-17 15:33:57.971 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-17 15:33:59.552 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-17 15:34:01.342 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-17 15:35:43.512 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 15:35:44.107 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-17 15:35:46.092 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-17 15:35:47.376 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-17 15:35:48.833 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-17 15:35:50.972 -05:00 [INF] Morgan Stanley added an item (Water Bottle) to their cart.
+2022-02-17 15:35:52.042 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-17 15:35:53.719 -05:00 [INF] Morgan Stanley added an item (Coca cola) to their cart.
+2022-02-17 15:35:54.289 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-17 15:36:00.187 -05:00 [INF] Morgan Stanley placed an order for a total of $1 at Nutrient North
+2022-02-17 15:36:02.458 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-17 15:36:05.365 -05:00 [INF] Displaying ViewOrderHistory to user
+2022-02-17 15:39:09.519 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-17 15:39:10.734 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-17 15:39:11.532 -05:00 [INF] Attempting to search for customer by name.
+2022-02-17 15:43:06.472 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-17 15:43:07.754 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-17 15:43:08.476 -05:00 [INF] Attempting to search for customer by name.
+2022-02-17 15:43:20.184 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-17 15:43:21.847 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-17 15:43:24.065 -05:00 [INF] Displaying MainMenu to user
+2022-02-17 15:43:24.820 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 15:43:30.992 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-17 15:43:32.606 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-17 15:43:34.478 -05:00 [INF] Displaying ViewOrderHistory to user
+2022-02-17 15:46:51.361 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 15:46:52.101 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-17 15:46:55.728 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-17 15:46:57.352 -05:00 [INF] Displaying ViewOrderHistory to user

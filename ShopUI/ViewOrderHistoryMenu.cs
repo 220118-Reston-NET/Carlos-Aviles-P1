@@ -42,6 +42,7 @@ namespace ShopUI
                 Console.WriteLine("This order (#"+ _order.Id +") from "+ _customer.Name +" was a total of $"+ _order.Price);   
                 foreach (PurchasedItem _item in _order.Items)
                     Console.WriteLine("- "+ _item.Item.Name +" was purchased for $"+ _item.Item.Price +" each ("+ _item.Quantity +"x)");
+                    Console.WriteLine("This order was created at "+ _order.DateCreated);
                     
                 Console.WriteLine();
             }

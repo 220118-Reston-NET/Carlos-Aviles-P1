@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+QSMFKsH1Rg4VjWYJzaqjHcNOeNZbfPos8jtFc7mcZfyZZaozNYjUvjOQ/w3UsuMreD5Yw3Y3KtlwKOItJjpGQ==",
+  "dgSpecHash": "CEkFHy/QsvGJ1a03TvSXCfCxsQB8h/2LD6N8uoQoNyi8jatKIbxV75YzXDiG6XjL7agjVgtZejjluARfQHfO3A==",
   "success": true,
-  "projectFilePath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopTest/ShopTest.csproj",
+  "projectFilePath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/ShopTest.csproj",
   "expectedPackageFiles": [
     "/Users/carlosaviles/.nuget/packages/castle.core/4.4.0/castle.core.4.4.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/coverlet.collector/3.1.0/coverlet.collector.3.1.0.nupkg.sha512",

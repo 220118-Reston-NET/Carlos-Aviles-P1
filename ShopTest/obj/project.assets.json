@@ -8790,11 +8790,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopTest/ShopTest.csproj",
+      "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/ShopTest.csproj",
       "projectName": "ShopTest",
-      "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopTest/ShopTest.csproj",
+      "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/ShopTest.csproj",
       "packagesPath": "/Users/carlosaviles/.nuget/packages/",
-      "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopTest/obj/",
+      "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/carlosaviles/.nuget/NuGet/NuGet.Config"
@@ -8809,14 +8809,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/ShopBL.csproj": {
-              "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/ShopBL.csproj"
+            "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/ShopBL.csproj": {
+              "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/ShopBL.csproj"
             },
-            "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj": {
-              "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj"
+            "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj": {
+              "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj"
             },
-            "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj": {
-              "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj"
+            "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj": {
+              "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj"
             }
           }
         }

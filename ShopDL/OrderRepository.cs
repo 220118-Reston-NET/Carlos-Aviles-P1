@@ -26,7 +26,7 @@ namespace ShopDL
         public void PlaceOrder(int customerId, List<CartItem> item, StoreFront store, double totalPrice)
         {
             string orderQuery = @"insert into [Order]
-                values(@storeId, @totalPrice); SELECT SCOPE_IDENTITY();";
+                values(@storeId, @totalPrice, @dateCreated); SELECT SCOPE_IDENTITY();";
             
             string purchasedQuery = @"insert into [PurchasedItem]
                 values(@orderId, @productId, @quantity)";
@@ -37,6 +37,8 @@ namespace ShopDL
             string coQuery = @"insert into [customers_orders]
                 values(@customerId, @orderId)";
 
+
+            DateTime dateCreated = DateTime.Now;
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
                 connection.Open();
@@ -45,6 +47,7 @@ namespace ShopDL
                 SqlCommand command = new SqlCommand(orderQuery, connection);
                 command.Parameters.AddWithValue("@storeId", store.Id);
                 command.Parameters.AddWithValue("@totalPrice", (float) totalPrice);
+                command.Parameters.AddWithValue("@dateCreated", dateCreated);
 
                 int orderId = Convert.ToInt32(command.ExecuteScalar());
                 
@@ -90,7 +93,9 @@ namespace ShopDL
                 while (reader.Read())
                 {
                     _loadedOrders.Add(new Order() {
-                        Id = reader.GetInt32(0)
+                        Id = reader.GetInt32(0), 
+                        Price = reader.GetInt32(2),
+                        DateCreated = reader.GetDateTime(3)
                     });
                 }
             }

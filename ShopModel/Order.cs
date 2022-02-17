@@ -45,6 +45,13 @@ namespace ShopModel
             get { return _price; }
             set { _price = value; }
         }
+
+        private DateTime _dateCreated;
+        public DateTime DateCreated
+        {
+            get { return _dateCreated; }
+            set { _dateCreated = value; }
+        }
         
         /// <summary>
         /// Instantiates a new order instance.

@@ -66,7 +66,7 @@ namespace ShopDL
         public void UpdateStoreInventory(int storeId, int productId, int quantity)
         {
             string query = @"update LineItem set LineItem.quantity = @quantity
-                where LineItem.storeId = @storeId and LinteItem.productId = @productId";
+                where LineItem.storeId = @storeId and LineItem.productId = @productId";
 
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
@@ -160,7 +160,8 @@ namespace ShopDL
                         Id = reader.GetInt32(1),
                         Items = GetPurchasedItems(reader.GetInt32(1)),
                         Quantity = GetTotalQuantityFromOrder(GetPurchasedItems(reader.GetInt32(1))),
-                        Price = (double) reader.GetSqlDouble(4)
+                        Price = (double) reader.GetSqlDouble(4),
+                        DateCreated = reader.GetDateTime(5)
                     });
                 }
             }
