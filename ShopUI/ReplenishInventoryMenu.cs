@@ -30,6 +30,7 @@ namespace ShopUI
         {
             StoreFront store = stores.GetStores()[Program.Instance.storeIndex];
             Console.WriteLine(store.Name +"'s inventory");
+            Console.WriteLine("Signed in as "+ Program.employee.Name);
             Console.WriteLine();
             Console.WriteLine("Pick a response below:");
 
@@ -67,10 +68,12 @@ namespace ShopUI
 
             if (input == _goBack)
             {
+                Program.employee = null;
                 return MenuType.ViewStoreOptions;
             }
             else if (input == _exit)
             {
+                Program.employee = null;
                 return MenuType.Exit;
             }
             else if (input < _goBack && input > 0)
@@ -106,6 +109,7 @@ namespace ShopUI
             {
                 Console.WriteLine("That's not a valid response.");
                 Console.ReadLine();
+                Program.employee = null;
                 return MenuType.MainMenu;
             }
         }

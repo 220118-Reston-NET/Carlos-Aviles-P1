@@ -26,6 +26,9 @@ public class Program
     /* The stores interface instance instantiated with the store repo. */
     private IStores stores;
 
+    /* The employee interface instance instantiated with the employee repo. */
+    private IEmployees employees;
+
     /* The customer interface instance instantiated with the customer repo. */
     private ICustomers customers;
 
@@ -40,6 +43,9 @@ public class Program
 
     /* The customer who is trying to purchase from a store. */
     public static Customer customer;
+
+    /* The employee who is trying to administer a store. */
+    public static Employee employee;
 
     /// <summary>
     /// Initializes the data and logger.
@@ -58,6 +64,7 @@ public class Program
         customers = new Customers(new CustomerRepository(_connectionString));
         products = new Products(new ProductRepository(_connectionString));
         orders = new Orders(new OrderRepository(_connectionString));
+        employees = new Employees(new EmployeeRepository(_connectionString));
 
         //load up the logger
         Log.Logger = new LoggerConfiguration().WriteTo.File("./logs/user.txt").CreateLogger();
@@ -137,6 +144,10 @@ public class Program
                 case MenuType.ViewOrderHistory:
                     Log.Information("Displaying ViewOrderHistory to user");
                     menu = new ViewOrderHistoryMenu(stores, customers);
+                    break;
+                case MenuType.SelectEmployee:
+                    Log.Information("Displaying SelectEmployee to user");
+                    menu = new SelectEmployeeMenu(employees, stores);
                     break;
 
                 case MenuType.Exit:

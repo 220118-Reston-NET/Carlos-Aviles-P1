@@ -13,5 +13,7 @@ namespace ShopBL
         Employee UpdateEmployee(Employee employee);
 
         List<Employee> GetEmployees();
+
+        List<Employee> GetEmployeesFromStoreId(int storeId);
     }
 }

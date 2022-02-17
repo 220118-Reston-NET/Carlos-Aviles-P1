@@ -36,5 +36,10 @@ namespace ShopBL
         {
             return repo.GetEmployees();
         }
+
+        public List<Employee> GetEmployeesFromStoreId(int storeId)
+        {
+            return repo.GetEmployeesFromStoreId(storeId);
+        }
     }
 }

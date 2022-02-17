@@ -14,5 +14,7 @@ namespace ShopDL
         Employee UpdateEmployee(Employee employee);
 
         List<Employee> GetEmployees();
+
+        List<Employee> GetEmployeesFromStoreId(int storeId);
     }
 }

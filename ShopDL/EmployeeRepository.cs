@@ -78,14 +78,20 @@ namespace ShopDL
                 {
                     listOfEmployees.Add(new Employee() {
                         Id = reader.GetInt32(0),
-                        Name = reader.GetString(1),
-                        Username = reader.GetString(2),
-                        Password = reader.GetString(3)
+                        StoreId = reader.GetInt32(1),
+                        Name = reader.GetString(2),
+                        Username = reader.GetString(3),
+                        Password = reader.GetString(4)
                     });
                 }
             }
 
             return listOfEmployees;
+        }
+
+        public List<Employee> GetEmployeesFromStoreId(int storeId)
+        {
+            return GetEmployees().FindAll(employee => employee.StoreId == storeId);
         }
     }
 }

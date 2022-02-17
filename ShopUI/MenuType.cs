@@ -26,6 +26,7 @@ namespace ShopUI
         SearchStore,
         ReplenishInventory,
         ViewOrderHistory,
+        SelectEmployee,
         
         Exit
     }

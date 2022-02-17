@@ -14,6 +14,12 @@
             set { _id = value; }
         }
 
+        private int _storeId;
+        public int StoreId {
+            get { return _storeId; }
+            set { _storeId = value; }
+        }
+
         /* The full name of this employee. */
         private string _name;
         public string Name

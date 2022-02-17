@@ -53,7 +53,7 @@ namespace ShopUI
                     }
                         return MenuType.ViewStoreOptions;
                 case "2":
-                    return MenuType.ReplenishInventory;
+                    return MenuType.SelectEmployee;
                 case "3":
                     return MenuType.ViewOrderHistory;
                 case "4":
