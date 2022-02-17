@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj": {}
+    "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj": {}
   },
   "projects": {
-    "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj": {
+    "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj",
+        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj",
         "projectName": "ShopModel",
-        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj",
+        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj",
         "packagesPath": "/Users/carlosaviles/.nuget/packages/",
-        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/obj/",
+        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/carlosaviles/.nuget/NuGet/NuGet.Config"

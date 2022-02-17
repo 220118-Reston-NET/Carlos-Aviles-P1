@@ -65,8 +65,8 @@ namespace ShopDL
 
         public void UpdateStoreInventory(int storeId, int productId, int quantity)
         {
-            string query = @"update StoreInventory set StoreInventory.quantity = @quantity
-                where StoreInventory.storeId = @storeId and StoreInventory.productId = @productId";
+            string query = @"update LineItem set LineItem.quantity = @quantity
+                where LineItem.storeId = @storeId and LinteItem.productId = @productId";
 
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
@@ -110,7 +110,7 @@ namespace ShopDL
         public List<LineItem> GetLineItems(int storeId)
         {
             List<LineItem> loadedItems = new List<LineItem>();
-            string query = @"select * from Store s join StoreInventory as si 
+            string query = @"select * from Store s join LineItem as si 
                 on si.storeId = s.id and s.id = @storeId join Product as p on si.productId = p.id";
 
             using (SqlConnection connection = new SqlConnection(connectionURL))

@@ -71,3 +71,14 @@
 2022-02-16 13:37:07.081 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
 2022-02-16 13:37:09.292 -05:00 [INF] Displaying SelectCustomerMenu to user
 2022-02-16 13:37:17.846 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-17 13:57:49.713 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-17 13:57:51.359 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-17 13:57:52.237 -05:00 [INF] Attempting to search for customer by name.
+2022-02-17 13:58:00.020 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-17 13:58:02.065 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-17 13:58:06.376 -05:00 [INF] Displaying MainMenu to user
+2022-02-17 13:58:07.579 -05:00 [INF] Displaying StoresMenu to user
+2022-02-17 13:58:09.909 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-17 13:58:11.891 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-17 13:58:13.382 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-17 13:58:15.788 -05:00 [INF] Displaying BuyProductsMenu to user

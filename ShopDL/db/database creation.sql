@@ -1,3 +1,12 @@
+CREATE TABLE [Employee] (
+  [id] int PRIMARY KEY IDENTITY(1, 1),
+  [storeId] int,
+  [name] nvarchar(255),
+  [username] nvarchar(255),
+  [password] nvarchar(255)
+)
+GO
+
 CREATE TABLE [Customer] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
   [name] nvarchar(255),
@@ -8,7 +17,7 @@ CREATE TABLE [Customer] (
 GO
 
 CREATE TABLE [Product] (
-  [id] [pk],
+  [id] int PRIMARY KEY,
   [name] nvarchar(255),
   [price] float,
   [description] nvarchar(255),
@@ -18,13 +27,13 @@ CREATE TABLE [Product] (
 GO
 
 CREATE TABLE [Store] (
-  [id] int PRIMARY KEY,
+  [id] int PRIMARY KEY IDENTITY(1, 1),
   [name] nvarchar(255),
   [address] nvarchar(255)
 )
 GO
 
-CREATE TABLE [StoreInventory] (
+CREATE TABLE [LineItem] (
   [storeId] int,
   [productId] int,
   [quantity] int
@@ -57,13 +66,13 @@ CREATE TABLE [stores_orders] (
 )
 GO
 
-ALTER TABLE [StoreInventory] ADD FOREIGN KEY ([storeId]) REFERENCES [Store] ([id])
+ALTER TABLE [Employee] ADD FOREIGN KEY ([storeId]) REFERENCES [Store] ([id])
 GO
 
-ALTER TABLE [StoreInventory] ADD FOREIGN KEY ([productId]) REFERENCES [Product] ([id])
+ALTER TABLE [LineItem] ADD FOREIGN KEY ([storeId]) REFERENCES [Store] ([id])
 GO
 
-ALTER TABLE [Order] ADD FOREIGN KEY ([storeId]) REFERENCES [Store] ([id])
+ALTER TABLE [LineItem] ADD FOREIGN KEY ([productId]) REFERENCES [Product] ([id])
 GO
 
 ALTER TABLE [PurchasedItem] ADD FOREIGN KEY ([orderId]) REFERENCES [Order] ([id])

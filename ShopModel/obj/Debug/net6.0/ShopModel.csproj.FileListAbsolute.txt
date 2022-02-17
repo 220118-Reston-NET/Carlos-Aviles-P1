@@ -10,3 +10,15 @@
 /Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/obj/Debug/net6.0/ShopModel.dll
 /Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/obj/Debug/net6.0/ref/ShopModel.dll
 /Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/obj/Debug/net6.0/ShopModel.pdb
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/bin/Debug/net6.0/ShopModel.deps.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/bin/Debug/net6.0/ShopModel.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/bin/Debug/net6.0/ref/ShopModel.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/bin/Debug/net6.0/ShopModel.pdb
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ShopModel.csproj.AssemblyReference.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ShopModel.GeneratedMSBuildEditorConfig.editorconfig
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ShopModel.AssemblyInfoInputs.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ShopModel.AssemblyInfo.cs
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ShopModel.csproj.CoreCompileInputs.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ShopModel.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ref/ShopModel.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/Debug/net6.0/ShopModel.pdb
