@@ -1,0 +1,2 @@
+ALTER TABLE [Order]
+DROP CONSTRAINT storeId;

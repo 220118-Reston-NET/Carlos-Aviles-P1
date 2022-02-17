@@ -1,0 +1,73 @@
+2022-02-16 11:29:23.715 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-16 11:29:24.601 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 11:29:28.706 -05:00 [INF] Cleared default customer data
+2022-02-16 11:29:28.708 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 11:29:31.231 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-16 12:05:26.832 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-16 12:05:27.670 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 12:05:32.496 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-16 13:07:39.482 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-16 13:07:41.966 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:07:51.211 -05:00 [INF] Added customer Morgan Stanley to the database.
+2022-02-16 13:07:53.609 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:07:57.281 -05:00 [INF] Couldn't save customer attempt Morgan Stanley because either exists or incorrect details filled
+2022-02-16 13:08:14.739 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:08:20.310 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:08:23.064 -05:00 [INF] Added customer Morgan Stanley to the database.
+2022-02-16 13:08:23.889 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:08:31.143 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:08:33.087 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:08:39.077 -05:00 [INF] Added customer Goldman Sachs to the database.
+2022-02-16 13:08:39.896 -05:00 [INF] Displaying AddCustomerMenu to user
+2022-02-16 13:08:41.553 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-16 13:08:44.969 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-16 13:08:46.416 -05:00 [INF] Attempting to search for customer by name.
+2022-02-16 13:09:03.436 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-16 13:09:04.303 -05:00 [INF] Attempting to search for customer by name.
+2022-02-16 13:09:22.876 -05:00 [INF] Displaying SearchCustomerMenu to user
+2022-02-16 13:09:25.388 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-16 13:09:27.684 -05:00 [INF] Displaying MainMenu to user
+2022-02-16 13:09:28.529 -05:00 [INF] Displaying StoresMenu to user
+2022-02-16 13:09:33.054 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-16 13:09:42.660 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:09:47.967 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-16 13:09:52.505 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:09:59.916 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:02.768 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:10:05.146 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-16 13:10:08.324 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:26.274 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:29.178 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:36.713 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:38.645 -05:00 [INF] Morgan Stanley added an item (Solar-Powered Generator) to their cart.
+2022-02-16 13:10:40.789 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:46.441 -05:00 [INF] Morgan Stanley added an item (Solar-Powered Floodlight) to their cart.
+2022-02-16 13:10:47.754 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:54.352 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:10:57.219 -05:00 [INF] Morgan Stanley added an item (Solar-Powered Generator) to their cart.
+2022-02-16 13:10:57.912 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:11:00.165 -05:00 [INF] Morgan Stanley added an item (Solar Panel) to their cart.
+2022-02-16 13:11:02.280 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:11:05.773 -05:00 [INF] Morgan Stanley placed an order for a total of $1599.99 at Solar South
+2022-02-16 13:11:10.121 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:11:16.271 -05:00 [INF] Displaying ViewOrderHistory to user
+2022-02-16 13:11:33.428 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:11:37.336 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-16 13:12:13.642 -05:00 [INF] Displaying StoresMenu to user
+2022-02-16 13:12:16.109 -05:00 [INF] Displaying SearchStoreMenu to user
+2022-02-16 13:12:28.917 -05:00 [INF] Displaying SearchStoreMenu to user
+2022-02-16 13:12:35.430 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:12:39.463 -05:00 [INF] Displaying ReplenishInventoryMenu to user
+2022-02-16 13:12:54.814 -05:00 [INF] Displaying ReplenishInventoryMenu to user
+2022-02-16 13:12:57.063 -05:00 [INF] Added 50x Water Bottle to the current stock.
+2022-02-16 13:12:57.155 -05:00 [INF] Displaying ReplenishInventoryMenu to user
+2022-02-16 13:13:02.156 -05:00 [INF] Added 10x Coca cola to the current stock.
+2022-02-16 13:13:02.225 -05:00 [INF] Displaying ReplenishInventoryMenu to user
+2022-02-16 13:13:04.744 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:13:06.684 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-16 13:13:09.518 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-16 13:36:59.813 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:37:03.898 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-16 13:37:07.081 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-16 13:37:09.292 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-16 13:37:17.846 -05:00 [INF] Displaying BuyProductsMenu to user
