@@ -3,12 +3,12 @@ namespace ShopUI
     /*
      * The menu interface that will display basic store front options.
      */
-    public class StoresMenu : MenuInterface
+    public class ManagementMenu : MenuInterface
     {
 
         public void Print()
         {
-            Console.WriteLine("Stores");
+            Console.WriteLine("Management");
             Console.WriteLine();
             Console.WriteLine("Pick a response below:");
             Console.WriteLine("[1] - View stores");
@@ -34,7 +34,7 @@ namespace ShopUI
                 default:
                     Console.WriteLine("That's not a valid response.");
                     Console.ReadLine();
-                    return MenuType.Stores;
+                    return MenuType.Management;
             }
         }
     }

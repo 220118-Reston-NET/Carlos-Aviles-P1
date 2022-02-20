@@ -18,7 +18,7 @@ namespace ShopUI
         /*
          * Everything to do with the stores part of the menu.
          */
-        Stores,
+        Management,
         ViewStore,
         ViewStoreOptions,
         SelectCustomer,

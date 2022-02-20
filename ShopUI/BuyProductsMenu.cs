@@ -62,13 +62,11 @@ namespace ShopUI
             emptyCart = index + 1;
             makePurchase = index + 2;
             goBack = index + 3;
-            exit = index + 4;
 
             Console.WriteLine("["+ inventory +"] - View cart");
             Console.WriteLine("["+ emptyCart +"] - Empty cart");
             Console.WriteLine("["+ makePurchase +"] - Purchase items");
             Console.WriteLine("["+ goBack +"] - Go back");
-            Console.WriteLine("["+ exit +"] - Exit");
         }
 
         public MenuType UserInput()
@@ -115,12 +113,6 @@ namespace ShopUI
                     restock(_store);
                     cart.Clear();
                     return MenuType.ViewStoreOptions;
-                }
-                else if (input == exit)
-                {
-                    restock(_store);
-                    cart.Clear();
-                    return MenuType.Exit;
                 }
                 else if (input < inventory && input > 0)
                 {

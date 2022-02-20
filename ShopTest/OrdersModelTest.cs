@@ -22,7 +22,7 @@ namespace ShopTest
             _item.Quantity = 1;
             _orders.Items.Add(_item);
             _orders.Location = _store1.Address;
-            _orders.Price = _product1.Price;
+            _orders.Price = (decimal) _product1.Price;
 
             //assert
             Assert.NotNull(_product1.Price);

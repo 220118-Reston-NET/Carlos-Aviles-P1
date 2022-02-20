@@ -37,6 +37,16 @@ namespace ShopBL
             return repo.GetCustomers();
         }
 
+        public int LoginCustomer(string username, string password)
+        {
+            return repo.LoginCustomer(username, password);
+        }
+
+        public List<Order> GetOrders(int customerId)
+        {
+            return repo.GetOrders(customerId);
+        }
+
         public Customer GetCustomerFromId(int customerId)
         {
             return repo.GetCustomerFromId(customerId);
@@ -104,6 +114,11 @@ namespace ShopBL
         public Customer GetCustomerFromOrder(int id)
         {
             return repo.GetCustomerFromOrder(id);
+        }
+
+        public Customer GetCustomerFromUsername(string username)
+        {
+            return repo.GetCustomerFromUsername(username);
         }
     }
 }

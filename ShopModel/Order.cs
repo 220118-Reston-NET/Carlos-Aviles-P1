@@ -39,8 +39,8 @@ namespace ShopModel
         }
 
         /* The total price of the order. */
-        private double _price;
-        public double Price
+        private decimal _price;
+        public decimal Price
         {
             get { return _price; }
             set { _price = value; }

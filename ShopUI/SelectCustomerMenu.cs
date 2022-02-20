@@ -9,10 +9,6 @@ namespace ShopUI
     public class SelectCustomerMenu : MenuInterface
     {
 
-        //Variables that hold the input value of a specific task.
-        private int _goBack;
-        private int _exit;
-
         /* The customers interface instance */
         private ICustomers customers;
 
@@ -27,46 +23,57 @@ namespace ShopUI
 
         public void Print()
         {
-            Console.WriteLine("Select customer");
+            Console.WriteLine("Customer");
             Console.WriteLine();
             Console.WriteLine("Pick a response below:");
 
-            //loop through each iteration in the customers list to display on the console.
-            int index = 1;
-            foreach(Customer _customer in customers.GetCustomers())
-            {
-                Console.WriteLine("["+ index +"] - "+ _customer.Name);
-                index++;
-            }
-
-            //set up the go back and exit input setting
-            _goBack = index;
-            _exit = index + 1;
-
-            Console.WriteLine("["+ _goBack +"] - Go back");
-            Console.WriteLine("["+ _exit +"] - Exit");
+            Console.WriteLine("[1] - Login");
+            Console.WriteLine("[2] - Go back");
+            Console.WriteLine("[3] - Exit");
         }
 
         public MenuType UserInput()
         {
-            //convert the input string to an integer
-            int input = Convert.ToInt32(Console.ReadLine());
-
-            if (input == _goBack)
-                return MenuType.ViewStoreOptions;
-            else if (input == _exit)
-                return MenuType.Exit;
-            else if (customers.GetCustomers()[input - 1] != null)
+            try
             {
-                //find the customer in the customers list and get the instance.
-                Customer buyer = customers.GetCustomers()[input - 1];
-                Program.customer = buyer;
+                //convert the input string to an integer
+                int input = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Entering store as "+ buyer.Name +".");
-                Console.ReadLine();
-                return MenuType.BuyProducts;
+                switch(input)
+                {
+                    case 1:
+                        Console.WriteLine("Type in your username:");
+                        String username = Console.ReadLine();
+                        Console.WriteLine("Type in your password:");
+                        String password = Console.ReadLine();
+
+                        int loginResult = customers.LoginCustomer(username, password);
+                        if (loginResult == 1)
+                        {
+                            Customer customer = customers.GetCustomerFromUsername(username);
+                        
+                            Program.customer = customer;
+                            Console.WriteLine("Successfully logged in as "+ customer.Name +".");
+                            Console.ReadLine();
+                            return MenuType.ViewStore;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Your username or password is not correct. Try again.");
+                            Console.ReadLine();
+                            return MenuType.SelectCustomer;
+                        }
+                    case 2:
+                        return MenuType.MainMenu;
+                    case 3:
+                        return MenuType.Exit;
+                    default:
+                        Console.WriteLine("That's not a valid response.");
+                        Console.ReadLine();
+                        return MenuType.MainMenu;
+                }
             }
-            else
+            catch(Exception e)
             {
                 Console.WriteLine("That's not a valid response.");
                 Console.ReadLine();

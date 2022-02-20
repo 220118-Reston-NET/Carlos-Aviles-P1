@@ -29,6 +29,15 @@ namespace ShopBL
         /// <returns>The list of customers.</returns>
         List<Customer> GetCustomers();
 
+        int LoginCustomer(string username, string password);
+
+        /// <summary>
+        /// Gets all the orders from a specific customer from the database.
+        /// </summary>
+        /// <param name="customerId">The customer's unique identification.</param>
+        /// <returns>The list of orders.</returns>
+        List<Order> GetOrders(int customerId);
+
         /// <summary>
         /// Gets a customer by using their unique identification.
         /// </summary>
@@ -126,5 +135,7 @@ namespace ShopBL
         /// <param name="id">The order id.</param>
         /// <returns>The customer instance, if found.</returns>
         Customer GetCustomerFromOrder(int id);
+
+        Customer GetCustomerFromUsername(string username);
     }
 }

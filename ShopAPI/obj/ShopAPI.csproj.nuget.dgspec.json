@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopAPI/ShopAPI.csproj": {}
+    "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/ShopAPI.csproj": {}
   },
   "projects": {
-    "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopAPI/ShopAPI.csproj": {
+    "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/ShopAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopAPI/ShopAPI.csproj",
+        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/ShopAPI.csproj",
         "projectName": "ShopAPI",
-        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopAPI/ShopAPI.csproj",
+        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/ShopAPI.csproj",
         "packagesPath": "/Users/carlosaviles/.nuget/packages/",
-        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopAPI/obj/",
+        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/carlosaviles/.nuget/NuGet/NuGet.Config"
@@ -26,14 +26,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/ShopBL.csproj": {
-                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/ShopBL.csproj"
+              "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/ShopBL.csproj": {
+                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/ShopBL.csproj"
               },
-              "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj": {
-                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj"
+              "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj": {
+                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj"
               },
-              "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj": {
-                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj"
+              "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj": {
+                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj"
               }
             }
           }
@@ -48,6 +48,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[7.0.0-preview.1.22076.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -75,14 +79,14 @@
         }
       }
     },
-    "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/ShopBL.csproj": {
+    "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/ShopBL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/ShopBL.csproj",
+        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/ShopBL.csproj",
         "projectName": "ShopBL",
-        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/ShopBL.csproj",
+        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/ShopBL.csproj",
         "packagesPath": "/Users/carlosaviles/.nuget/packages/",
-        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopBL/obj/",
+        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/carlosaviles/.nuget/NuGet/NuGet.Config"
@@ -97,11 +101,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj": {
-                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj"
+              "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj": {
+                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj"
               },
-              "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj": {
-                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj"
+              "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj": {
+                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj"
               }
             }
           }
@@ -134,14 +138,14 @@
         }
       }
     },
-    "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj": {
+    "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj",
+        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj",
         "projectName": "ShopDL",
-        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/ShopDL.csproj",
+        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/ShopDL.csproj",
         "packagesPath": "/Users/carlosaviles/.nuget/packages/",
-        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopDL/obj/",
+        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopDL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/carlosaviles/.nuget/NuGet/NuGet.Config"
@@ -156,8 +160,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj": {
-                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj"
+              "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj": {
+                "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj"
               }
             }
           }
@@ -196,14 +200,14 @@
         }
       }
     },
-    "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj": {
+    "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj",
+        "projectUniqueName": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj",
         "projectName": "ShopModel",
-        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/ShopModel.csproj",
+        "projectPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/ShopModel.csproj",
         "packagesPath": "/Users/carlosaviles/.nuget/packages/",
-        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project0/ShopModel/obj/",
+        "outputPath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopModel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/carlosaviles/.nuget/NuGet/NuGet.Config"

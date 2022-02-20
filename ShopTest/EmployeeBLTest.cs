@@ -16,11 +16,9 @@ namespace ShopTest
             //arrange
             string name = "Abigail Smith";
             string user = "abig";
-            string pass = "1234";
             Employee _employee = new Employee() {
                 Name = name,
-                Username = user,
-                Password = pass
+                Username = user
             };
             List<Employee> expectedList = new List<Employee>();
             expectedList.Add(_employee);

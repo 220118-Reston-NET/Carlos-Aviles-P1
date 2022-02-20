@@ -45,7 +45,7 @@ namespace ShopUI
                     if (stores.SearchStoreByExactName(name))
                     {
                         Program.Instance.UpdateStoreIndex(name);
-                        return MenuType.ViewStoreOptions;
+                        return MenuType.SelectCustomer;
                     }
 
                     //otherwise, search if the input matches any store names.
@@ -68,7 +68,7 @@ namespace ShopUI
                     if (stores.SearchStoreByExactAddress(address))
                     {
                         Program.Instance.UpdateStoreIndex(address);
-                        return MenuType.ViewStoreOptions;
+                        return MenuType.SelectCustomer;
                     }
 
                     //otherwise, search if the input matches any store address.
@@ -84,7 +84,7 @@ namespace ShopUI
                     return MenuType.SearchStore;
 
                 case "3":
-                    return MenuType.MainMenu;
+                    return MenuType.CustomerPortal;
                 default:
                     Console.WriteLine("That's not a valid response.");
                     Console.ReadLine();

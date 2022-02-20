@@ -46,7 +46,7 @@ namespace ShopDL
                 //insert into order table
                 SqlCommand command = new SqlCommand(orderQuery, connection);
                 command.Parameters.AddWithValue("@storeId", store.Id);
-                command.Parameters.AddWithValue("@totalPrice", (float) totalPrice);
+                command.Parameters.AddWithValue("@totalPrice", totalPrice);
                 command.Parameters.AddWithValue("@dateCreated", dateCreated);
 
                 int orderId = Convert.ToInt32(command.ExecuteScalar());

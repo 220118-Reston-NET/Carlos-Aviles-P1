@@ -28,6 +28,8 @@ namespace ShopDL
         /// <returns>The list of customers.</returns>
         List<Customer> GetCustomers();
 
+        int LoginCustomer(string username, string password);
+
         /// <summary>
         /// Gets all the orders from a specific customer from the database.
         /// </summary>
@@ -146,5 +148,7 @@ namespace ShopDL
         /// <param name="id">The order id.</param>
         /// <returns>The customer instance, if found.</returns>
         Customer GetCustomerFromOrder(int id);
+
+        Customer GetCustomerFromUsername(string username);
     }
 }

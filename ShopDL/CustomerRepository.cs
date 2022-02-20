@@ -24,19 +24,20 @@ namespace ShopDL
         
         public Customer AddCustomer(Customer customer)
         {
-            string query = @"insert into [Customer]
-                values(@custName, @custAge, @custAddress, @custPhone)";
-
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@custName", customer.Name);
-                command.Parameters.AddWithValue("@custAge", customer.Age);
-                command.Parameters.AddWithValue("@custAddress", customer.Address);
-                command.Parameters.AddWithValue("@custPhone", customer.Phone);
+                SqlCommand command = new SqlCommand("CreateCustomer", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
 
+                command.Parameters.AddWithValue("@name", customer.Name);
+                command.Parameters.AddWithValue("@age", customer.Age);
+                command.Parameters.AddWithValue("@address", customer.Address);
+                command.Parameters.AddWithValue("@phone", customer.Phone);
+                command.Parameters.AddWithValue("@username",customer.Username);
+                command.Parameters.AddWithValue("@password", customer.Password);
+                
                 command.ExecuteNonQuery();
             }
             return customer;
@@ -85,12 +86,30 @@ namespace ShopDL
                         Age = reader.GetInt32(2),
                         Address = reader.GetString(3),
                         Phone = reader.GetString(4),
-                        Orders = GetOrders(reader.GetInt32(0))
+                        Orders = GetOrders(reader.GetInt32(0)),
+                        Username = reader.GetString(5)
                     });
                 }
             }
 
             return listOfCustomers;
+        }
+
+        public int LoginCustomer(string username, string password)
+        {
+            int loginResult = 0;
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("CustomerLogin", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                
+                loginResult = Convert.ToInt32(command.ExecuteScalar());
+            }
+            return loginResult;
         }
 
         public List<Order> GetOrders(int customerId)
@@ -115,7 +134,7 @@ namespace ShopDL
                         Items = GetPurchasedItems(reader.GetInt32(1)),
                         Quantity = GetTotalQuantityFromOrder(GetPurchasedItems(reader.GetInt32(1))),
                         Location = reader.GetString(7),
-                        Price = (double) reader.GetSqlDouble(4),
+                        Price = (decimal) reader.GetSqlMoney(4),
                         DateCreated = reader.GetDateTime(5)
                     });
                 }
@@ -244,14 +263,10 @@ namespace ShopDL
 
         public bool CanAddCustomer(Customer customer)
         {
-            if (customer.Name == "" || customer.Address == "" || customer.Phone == "" || customer.Age <= 0)
-                return false;
-            foreach (Customer temp in GetCustomers())
-            {
-                if(temp.Name == customer.Name && temp.Address == customer.Address)
-                    return false;
-            }
-            return true;
+            if (customer.Name != "" && customer.Address != "" && customer.Phone != "" && (customer.Age >= 0 && customer.Age <= 120) &&
+                customer.Username != "" && customer.Password != "")
+                return true;
+            return false;
         }
 
         public Customer GetCustomerFromOrder(int id)
@@ -265,6 +280,11 @@ namespace ShopDL
                 }
             }
             return null;
+        }
+
+        public Customer GetCustomerFromUsername(string username)
+        {
+            return GetCustomers().Find(customer => customer.Username == username);
         }
     }
 }

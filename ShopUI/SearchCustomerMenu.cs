@@ -179,7 +179,7 @@ namespace ShopUI
                     return MenuType.SearchCustomer;
 
                 case "4":
-                    return MenuType.CustomerPortal;
+                    return MenuType.ViewStoreOptions;
                 default:
                     Console.WriteLine("That's not a valid response.");
                     Console.ReadLine();

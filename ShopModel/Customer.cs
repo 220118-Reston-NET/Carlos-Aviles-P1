@@ -54,6 +54,20 @@
             set { _orders = value; }
         }
 
+        private string _username;
+        public string Username
+        {
+            get { return _username; }
+            set { _username = value; }
+        }
+
+        private string _password;
+        public string Password
+        {
+            get { return _password; }
+            set { _password = value; }
+        }
+
         /// <summary>
         /// Instantiates a new customer instance.
         /// </summary>
@@ -64,7 +78,6 @@
             Phone = "123456789";
             Age = 18;
             Orders = new List<Order>();
-
         }
     }
 }

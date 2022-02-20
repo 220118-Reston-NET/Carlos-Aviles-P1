@@ -24,7 +24,7 @@ namespace ShopTest
                 Items = listOfPurchasedItems,
                 Quantity = quantity,
                 Location = location,
-                Price = 20.0
+                Price = 20
             };
             List<Order> expectedList = new List<Order>();
             expectedList.Add(_Order);

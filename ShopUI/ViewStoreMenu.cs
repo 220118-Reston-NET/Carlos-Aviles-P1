@@ -37,7 +37,6 @@ namespace ShopUI
             }
 
             Console.WriteLine("[4] - Go back");
-            Console.WriteLine("[5] - Exit");
         }
 
         public MenuType UserInput()
@@ -54,9 +53,7 @@ namespace ShopUI
                     Program.Instance.storeIndex = Convert.ToInt32(_input) - 1;
                     return MenuType.ViewStoreOptions;
                 case "4":
-                    return MenuType.Stores;
-                case "5":
-                    return MenuType.Exit;
+                    return MenuType.CustomerPortal;
                 default:
                     Console.WriteLine("That's not a valid response.");
                     Console.ReadLine();

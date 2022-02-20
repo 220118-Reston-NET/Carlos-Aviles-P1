@@ -113,9 +113,9 @@ public class Program
                 /*
                  * Everything to do with the stores part of the menu.
                  */
-                case MenuType.Stores:
-                    Log.Information("Displaying StoresMenu to user");
-                    menu = new StoresMenu();
+                case MenuType.Management:
+                    Log.Information("Displaying ManagementMenu to user");
+                    menu = new ManagementMenu();
                     break;
                 case MenuType.ViewStore:
                     Log.Information("Displaying ViewStoresMenu to user");

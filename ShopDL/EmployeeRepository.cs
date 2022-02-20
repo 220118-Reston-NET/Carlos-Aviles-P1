@@ -81,7 +81,7 @@ namespace ShopDL
                         StoreId = reader.GetInt32(1),
                         Name = reader.GetString(2),
                         Username = reader.GetString(3),
-                        Password = reader.GetString(4)
+                        //TODO: password / salt into model
                     });
                 }
             }
@@ -89,9 +89,31 @@ namespace ShopDL
             return listOfEmployees;
         }
 
+        public int LoginEmployee(String username, String password)
+        {
+            int loginResult = 0;
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("EmployeeLogin", connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                
+                loginResult = Convert.ToInt32(command.ExecuteScalar());
+            }
+            return loginResult;
+        }
+
         public List<Employee> GetEmployeesFromStoreId(int storeId)
         {
             return GetEmployees().FindAll(employee => employee.StoreId == storeId);
+        }
+
+        public Employee GetEmployeeFromUsername(string username)
+        {
+            return GetEmployees().Find(employee => employee.Username == username);
         }
     }
 }

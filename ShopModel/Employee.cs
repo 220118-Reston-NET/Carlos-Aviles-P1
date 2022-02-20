@@ -37,8 +37,8 @@
         }
 
         /* The password of this employee. */
-        private string _password;
-        public string Password
+        private byte[] _password;
+        public byte[] Password
         {
             get { return _password; }
             set { _password = value; }
@@ -50,8 +50,6 @@
         public Employee()
         {
             Name = "John Doe";
-            Username = "";
-            Password = "";
         }
     }
 }

@@ -2,8 +2,9 @@ CREATE TABLE [Employee] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
   [storeId] int,
   [name] nvarchar(255),
-  [username] nvarchar(255),
-  [password] nvarchar(255)
+  [username] nvarchar(255) UNIQUE,
+  [password] binary(64),
+  [salt] uniqueidentifier
 )
 GO
 
@@ -12,12 +13,15 @@ CREATE TABLE [Customer] (
   [name] nvarchar(255),
   [age] int,
   [address] nvarchar(255),
-  [phone] nvarchar(255)
+  [phone] nvarchar(255),
+  [username] nvarchar(255) UNIQUE,
+  [password] binary(64),
+  [salt] uniqueidentifier
 )
 GO
 
 CREATE TABLE [Product] (
-  [id] int PRIMARY KEY,
+  [id] [pk],
   [name] nvarchar(255),
   [price] float,
   [description] nvarchar(255),
@@ -43,7 +47,8 @@ GO
 CREATE TABLE [Order] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
   [storeId] int,
-  [totalPrice] float
+  [totalPrice] money,
+  [dateCreated] smalldatetime
 )
 GO
 

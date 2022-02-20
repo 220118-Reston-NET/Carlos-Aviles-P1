@@ -68,7 +68,6 @@ namespace ShopUI
 
             if (input == _goBack)
             {
-                Program.employee = null;
                 return MenuType.ViewStoreOptions;
             }
             else if (input == _exit)
