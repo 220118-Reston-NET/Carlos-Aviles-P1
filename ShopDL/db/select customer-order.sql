@@ -1,1 +1,0 @@
-select * from [customers_orders]

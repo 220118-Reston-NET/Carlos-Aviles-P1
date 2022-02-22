@@ -14,5 +14,11 @@ namespace ShopBL
         /// </summary>
         /// <returns>The list of products.</returns>
         List<Product> GetProducts();
+
+        /// <summary>
+        /// Gets all the products from the database.
+        /// </summary>
+        /// <returns>The list in asynchronous task.</returns>
+        Task<List<Product>> GetProductsAsync();
     }
 }

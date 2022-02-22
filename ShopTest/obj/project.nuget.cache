@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CEkFHy/QsvGJ1a03TvSXCfCxsQB8h/2LD6N8uoQoNyi8jatKIbxV75YzXDiG6XjL7agjVgtZejjluARfQHfO3A==",
+  "dgSpecHash": "ulMkIbzXehOQoIaceNUsll7CoB5adAYuCBjJM9Rb2QFblh4iT/b39afuASA5cjvwmJRAGYrL8tmK0pY2ULmrtw==",
   "success": true,
   "projectFilePath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/ShopTest.csproj",
   "expectedPackageFiles": [
+    "/Users/carlosaviles/.nuget/packages/autofac/6.0.0/autofac.6.0.0.nupkg.sha512",
+    "/Users/carlosaviles/.nuget/packages/autofac.extras.moq/6.1.0/autofac.extras.moq.6.1.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/castle.core/4.4.0/castle.core.4.4.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/coverlet.collector/3.1.0/coverlet.collector.3.1.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/microsoft.codecoverage/16.11.0/microsoft.codecoverage.16.11.0.nupkg.sha512",
@@ -43,6 +45,7 @@
     "/Users/carlosaviles/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/moq/4.16.1/moq.4.16.1.nupkg.sha512",
+    "/Users/carlosaviles/.nuget/packages/moq.automock/3.2.0/moq.automock.3.2.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/nuget.frameworks/5.0.0/nuget.frameworks.5.0.0.nupkg.sha512",

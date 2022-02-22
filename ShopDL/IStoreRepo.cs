@@ -38,6 +38,12 @@ namespace ShopDL
         List<StoreFront> GetStores();
 
         /// <summary>
+        /// Gets all the stores from the database.
+        /// </summary>
+        /// <returns>The list of stores in asynchronous task.</returns>
+        Task<List<StoreFront>> GetStoresAsync();
+
+        /// <summary>
         /// Gets all the items in stock in a specified store.
         /// </summary>
         /// <param name="storeId">The store's unique identification.</param>

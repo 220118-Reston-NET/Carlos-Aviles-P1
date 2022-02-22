@@ -1,0 +1,17 @@
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ShopBL.deps.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ShopBL.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ref/ShopBL.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ShopBL.pdb
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ShopDL.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ShopModel.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ShopModel.pdb
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/bin/Release/net6.0/ShopDL.pdb
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.csproj.AssemblyReference.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.AssemblyInfoInputs.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.AssemblyInfo.cs
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.csproj.CoreCompileInputs.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.csproj.CopyComplete
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ref/ShopBL.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopBL/obj/Release/net6.0/ShopBL.pdb

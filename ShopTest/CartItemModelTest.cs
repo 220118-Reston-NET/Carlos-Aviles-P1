@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using Moq;
-using ShopBL;
-using ShopDL;
 using ShopModel;
 using Xunit;
 
