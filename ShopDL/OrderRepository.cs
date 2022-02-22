@@ -1,5 +1,4 @@
 using System.Data.SqlClient;
-using System.Text.Json;
 using ShopModel;
 
 namespace ShopDL
@@ -23,8 +22,10 @@ namespace ShopDL
             this.connectionURL = connectionURL;
         }
 
-        public void PlaceOrder(int customerId, List<CartItem> item, StoreFront store, double totalPrice)
+        public Order PlaceOrder(int customerId, List<CartItem> item, int storeId)
         {
+            double totalPrice = GetCartTotal(item);
+
             string orderQuery = @"insert into [Order]
                 values(@storeId, @totalPrice, @dateCreated); SELECT SCOPE_IDENTITY();";
             
@@ -37,19 +38,21 @@ namespace ShopDL
             string coQuery = @"insert into [customers_orders]
                 values(@customerId, @orderId)";
 
-
             DateTime dateCreated = DateTime.Now;
+            List<PurchasedItem> items = new List<PurchasedItem>();
+
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
                 connection.Open();
 
                 //insert into order table
                 SqlCommand command = new SqlCommand(orderQuery, connection);
-                command.Parameters.AddWithValue("@storeId", store.Id);
+                command.Parameters.AddWithValue("@storeId", storeId);
                 command.Parameters.AddWithValue("@totalPrice", totalPrice);
                 command.Parameters.AddWithValue("@dateCreated", dateCreated);
 
                 int orderId = Convert.ToInt32(command.ExecuteScalar());
+                int quantity = 0;
                 
                 //Insert into purhcaseditem table
                 command = new SqlCommand(purchasedQuery, connection);
@@ -60,12 +63,19 @@ namespace ShopDL
                     command.Parameters.AddWithValue("@productId", _item.Item.Id);
                     command.Parameters.AddWithValue("@quantity", _item.Quantity);
                     command.ExecuteNonQuery();
+                    quantity += _item.Quantity;
+                    items.Add(new PurchasedItem()
+                    {
+                        OrderId = orderId,
+                        Item = _item.Item,
+                        Quantity = _item.Quantity
+                    });
                 }
 
                 //insert into stores_orders table
                 command = new SqlCommand(soQuery, connection);
                 command.Parameters.Clear();
-                command.Parameters.AddWithValue("@storeId", store.Id);
+                command.Parameters.AddWithValue("@storeId", storeId);
                 command.Parameters.AddWithValue("@orderId", orderId);
                 command.ExecuteNonQuery();
 
@@ -75,6 +85,15 @@ namespace ShopDL
                 command.Parameters.AddWithValue("@customerId", customerId);
                 command.Parameters.AddWithValue("@orderId", orderId);
                 command.ExecuteNonQuery();
+
+                Order order = new Order() {
+                    Id = orderId,
+                    Items = items,
+                    Quantity = quantity,
+                    Price = (decimal) totalPrice,
+                    DateCreated = dateCreated
+                };
+                return order;
             }
         }
 

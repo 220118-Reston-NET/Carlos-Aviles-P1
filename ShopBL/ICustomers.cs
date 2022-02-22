@@ -24,10 +24,23 @@ namespace ShopBL
         Customer UpdateCustomer(Customer customer);
 
         /// <summary>
+        /// Deletes a customer from the database.
+        /// </summary>
+        /// <param name="customer">The customer instance.</param>
+        /// <returns>The customer instance.</returns>
+        Customer DeleteCustomer(Customer customer);
+
+        /// <summary>
         /// Gets all the customers from the database and places them in a list.
         /// </summary>
         /// <returns>The list of customers.</returns>
         List<Customer> GetCustomers();
+
+        /// <summary>
+        /// Gets all the customers from the database.
+        /// </summary>
+        /// <returns>The list in asynchronous task.</returns>
+        Task<List<Customer>> GetCustomersAsync();
 
         int LoginCustomer(string username, string password);
 

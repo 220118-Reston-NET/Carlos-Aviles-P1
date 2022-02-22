@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using ShopBL;
 using ShopModel;
 
@@ -11,27 +12,53 @@ namespace ShopAPI.Controllers
     {
 
         private ICustomers customers;
+        private IOrders orders;
 
-        public CustomerController(ICustomers customers)
+        private IMemoryCache cache;
+
+        public CustomerController(ICustomers customers, IOrders orders, IMemoryCache cache)
         {
             this.customers = customers;
+            this.orders = orders;
+            this.cache = cache;
         }
 
         [HttpGet]
-        public IActionResult GetAllCustomers()
+        public async Task<IActionResult> GetAllCustomers()
         {
             try
             {
+                List<Customer> listOfCustomers = new List<Customer>();
+                if (!cache.TryGetValue("customersList", out listOfCustomers))
+                {
+                    listOfCustomers = await customers.GetCustomersAsync();
+                    cache.Set("customersList", listOfCustomers, new TimeSpan(0,0,30));
+                }
                 return Ok(customers.GetCustomers());
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
             }
         }
 
-        [HttpGet("{name}", Name = "GetCustomerByName")]
-        public IActionResult GetCustomerByName(string name)
+        [Route("{id:int}")]
+        [HttpGet]
+        public async Task<IActionResult> GetCustomerById([FromQuery] int id)
+        {
+            try
+            {
+                return Ok(customers.GetCustomerFromId(id));
+            }
+            catch (Exception e)
+            {
+                return NotFound();
+            }
+        }
+
+        [Route("{name}")]
+        [HttpGet]
+        public async Task<IActionResult> GetCustomerByName([FromQuery] string name)
         {
             try
             {
@@ -39,12 +66,12 @@ namespace ShopAPI.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
             }
         }
 
         [HttpPost("Add")]
-        public IActionResult Post([FromBody] Customer customer)
+        public async Task<IActionResult> Post([FromBody] Customer customer)
         {
             try
             {
@@ -52,12 +79,12 @@ namespace ShopAPI.Controllers
             }
             catch(Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
             }
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Customer customer)
+        public async Task<IActionResult> Put([FromBody] Customer customer)
         {
             try
             {
@@ -65,7 +92,34 @@ namespace ShopAPI.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
+            }
+        }
+
+        [Route("Delete/")]
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] Customer customer)
+        {
+            try
+            {
+                return Ok(customers.DeleteCustomer(customer));
+            }
+            catch (Exception e)
+            {
+                return NotFound();
+            }
+        }
+        
+        [HttpPost("PlaceOrder")]
+        public IActionResult PlaceOrder(int customerId, [FromBody] List<CartItem> items, int storeId)
+        {
+            try
+            {
+                return Created("Created order!", orders.PlaceOrder(customerId, items, storeId));
+            }
+            catch (Exception e)
+            {
+                return NotFound();
             }
         }
     }

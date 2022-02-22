@@ -21,9 +21,9 @@ namespace ShopBL
         {
             this.repo = repo;
         }
-        public void PlaceOrder(int customerId, List<CartItem> items, StoreFront store, double price)
+        public Order PlaceOrder(int customerId, List<CartItem> items, int storeId)
         {
-            repo.PlaceOrder(customerId, items, store, price);
+            return repo.PlaceOrder(customerId, items, storeId);
         }
 
         public double GetCartTotal(List<CartItem> items)

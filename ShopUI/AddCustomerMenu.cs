@@ -1,6 +1,5 @@
 using System.Data.SqlClient;
 using ShopBL;
-using ShopDL;
 using ShopModel;
 
 namespace ShopUI

@@ -346,3 +346,6 @@
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/obj/Debug/net6.0/ref/ShopTest.dll
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/obj/Debug/net6.0/ShopTest.pdb
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/obj/Debug/net6.0/ShopTest.genruntimeconfig.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/bin/Debug/net6.0/Autofac.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/bin/Debug/net6.0/Autofac.Extras.Moq.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopTest/bin/Debug/net6.0/Moq.AutoMock.dll

@@ -589,3 +589,29 @@
 2022-02-20 10:44:56.731 -05:00 [INF] Displaying CustomerMenu to user
 2022-02-20 10:45:01.128 -05:00 [INF] Displaying MainMenu to user
 2022-02-20 10:45:01.704 -05:00 [INF] Displaying SelectEmployee to user
+2022-02-21 11:41:10.638 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-21 11:41:14.349 -05:00 [INF] Displaying MainMenu to user
+2022-02-21 11:41:15.127 -05:00 [INF] Displaying SelectEmployee to user
+2022-02-21 11:41:22.133 -05:00 [INF] Displaying SelectEmployee to user
+2022-02-21 11:44:37.300 -05:00 [INF] Displaying SelectEmployee to user
+2022-02-21 11:44:46.977 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-21 11:56:13.701 -05:00 [INF] Displaying SelectEmployee to user
+2022-02-21 11:59:34.948 -05:00 [INF] Displaying SelectEmployee to user
+2022-02-21 11:59:37.985 -05:00 [INF] Displaying MainMenu to user
+2022-02-21 11:59:39.107 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-21 11:59:42.031 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-21 11:59:52.047 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-21 12:00:00.573 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-21 12:03:09.346 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-21 12:03:16.621 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-21 12:03:21.990 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-21 12:26:02.946 -05:00 [INF] Displaying MainMenu to user
+2022-02-22 14:18:49.257 -05:00 [INF] Displaying CustomerMenu to user
+2022-02-22 14:18:52.715 -05:00 [INF] Displaying SelectCustomerMenu to user
+2022-02-22 14:19:01.417 -05:00 [INF] Displaying ViewStoresMenu to user
+2022-02-22 14:19:05.585 -05:00 [INF] Displaying ViewStoreOptionsMenu to user
+2022-02-22 14:19:07.841 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-22 14:19:12.137 -05:00 [INF] Morgan Stanley added an item (Coca cola) to their cart.
+2022-02-22 14:19:12.832 -05:00 [INF] Displaying BuyProductsMenu to user
+2022-02-22 14:19:15.821 -05:00 [INF] Morgan Stanley placed an order for a total of $0.75 at Nutrient North
+2022-02-22 14:19:16.745 -05:00 [INF] Displaying ViewStoreOptionsMenu to user

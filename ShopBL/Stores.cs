@@ -42,6 +42,11 @@ namespace ShopBL
             return repo.GetStores();
         }
 
+        public Task<List<StoreFront>> GetStoresAsync()
+        {
+            return repo.GetStoresAsync();
+        }
+
         public List<LineItem> GetLineItems(int storeId)
         {
             return repo.GetLineItems(storeId);

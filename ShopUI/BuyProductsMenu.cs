@@ -98,7 +98,7 @@ namespace ShopUI
                         Console.WriteLine("There's nothing in your cart!");
                     else
                     {
-                        orders.PlaceOrder(Program.customer.Id, cart, _store, orders.GetCartTotal(cart));
+                        orders.PlaceOrder(Program.customer.Id, cart, _store.Id);
 
                         Log.Information(Program.customer.Name + " placed an order for a total of $"+ orders.GetCartTotal(cart) +" at "+ _store.Name);
                         Console.WriteLine(Program.customer.Name +" has purchased this order for $"+ orders.GetCartTotal(cart));
@@ -178,9 +178,14 @@ namespace ShopUI
 
         private void displayCart()
         {
-            foreach (CartItem item in cart)
-                Console.WriteLine(item.Item.Name + " - "+ item.Quantity +"x");
-            Console.WriteLine("Total costs in your cart is $"+ orders.GetCartTotal(cart) +".");
+            if (cart.Count == 0)
+                Console.WriteLine("There is nothing in your cart.");
+            else
+            {
+                foreach (CartItem item in cart)
+                    Console.WriteLine(item.Item.Name + " - "+ item.Quantity +"x");
+                Console.WriteLine("Total costs in your cart is $"+ orders.GetCartTotal(cart) +".");
+            }
             Console.ReadLine();
         }
 

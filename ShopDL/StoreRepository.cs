@@ -107,6 +107,33 @@ namespace ShopDL
             return loadedStores;
         }
 
+        public async Task<List<StoreFront>> GetStoresAsync()
+        {
+            List<StoreFront> loadedStores = new List<StoreFront>();
+            string query = @"select * from [Store]";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                await connection.OpenAsync();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                while (await reader.ReadAsync())
+                {
+                    loadedStores.Add(new StoreFront()
+                    {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Address = reader.GetString(2),
+                        Items = GetLineItems(reader.GetInt32(0)),
+                        Orders = GetOrders(reader.GetInt32(0))
+                    });
+                }
+            }
+            return loadedStores;
+        }
+
         public List<LineItem> GetLineItems(int storeId)
         {
             List<LineItem> loadedItems = new List<LineItem>();

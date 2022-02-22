@@ -26,5 +26,10 @@ namespace ShopBL
         {
             return repo.GetProducts();
         }
+
+        public Task<List<Product>> GetProductsAsync()
+        {
+            return repo.GetProductsAsync();
+        }
     }
 }

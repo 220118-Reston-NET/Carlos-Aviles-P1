@@ -32,9 +32,19 @@ namespace ShopBL
             return repo.UpdateCustomer(customer);
         }
 
+        public Customer DeleteCustomer(Customer customer)
+        {
+            return repo.DeleteCustomer(customer);
+        }
+
         public List<Customer> GetCustomers()
         {
             return repo.GetCustomers();
+        }
+
+        public Task<List<Customer>> GetCustomersAsync()
+        {
+            return repo.GetCustomersAsync();
         }
 
         public int LoginCustomer(string username, string password)

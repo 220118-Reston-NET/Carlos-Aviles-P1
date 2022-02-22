@@ -1,5 +1,4 @@
 using System.Data.SqlClient;
-using System.Text.Json;
 using ShopModel;
 
 namespace ShopDL
@@ -66,6 +65,23 @@ namespace ShopDL
             return customer;
         }
 
+        public Customer DeleteCustomer(Customer customer)
+        {
+            string query = @"delete from [Customer] where id=@customerId;";
+
+            using(SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@customerId", customer.Id);
+
+                command.ExecuteNonQuery();
+            }
+            return customer;
+        }
+
         public List<Customer> GetCustomers()
         {
             List<Customer> listOfCustomers = new List<Customer>();
@@ -79,6 +95,35 @@ namespace ShopDL
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
+                {
+                    listOfCustomers.Add(new Customer() {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Age = reader.GetInt32(2),
+                        Address = reader.GetString(3),
+                        Phone = reader.GetString(4),
+                        Orders = GetOrders(reader.GetInt32(0)),
+                        Username = reader.GetString(5)
+                    });
+                }
+            }
+
+            return listOfCustomers;
+        }
+
+        public async Task<List<Customer>> GetCustomersAsync()
+        {
+            List<Customer> listOfCustomers = new List<Customer>();
+            string query = @"select * from [Customer]";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                await connection.OpenAsync();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                while (await reader.ReadAsync())
                 {
                     listOfCustomers.Add(new Customer() {
                         Id = reader.GetInt32(0),

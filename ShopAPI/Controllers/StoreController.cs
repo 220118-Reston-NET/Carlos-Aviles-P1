@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using ShopBL;
 using ShopModel;
 
@@ -11,27 +12,35 @@ namespace ShopAPI.Controllers
     {
 
         private IStores stores;
+        private IMemoryCache cache;
 
-        public StoreController(IStores stores)
+        public StoreController(IStores stores, IMemoryCache cache)
         {
             this.stores = stores;
+            this.cache = cache;
         }
 
         [HttpGet]
-        public IActionResult GetAllStores()
+        public async Task<IActionResult> GetAllStores()
         {
             try
             {
+                List<StoreFront> listOfStores = new List<StoreFront>();
+                if (!cache.TryGetValue("storesList", out listOfStores))
+                {
+                    listOfStores = await stores.GetStoresAsync();
+                    cache.Set("storesList", listOfStores, new TimeSpan(0, 0, 30));
+                }
                 return Ok(stores.GetStores());
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
             }
         }
 
         [HttpGet("{id}", Name = "GetStoreById")]
-        public IActionResult GetStoreById(int id)
+        public async Task<IActionResult> GetStoreById(int id)
         {
             try
             {
@@ -39,12 +48,12 @@ namespace ShopAPI.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
             }
         }
 
         [HttpPost("Add")]
-        public IActionResult Post([FromBody] StoreFront store)
+        public async Task<IActionResult> Post([FromBody] StoreFront store)
         {
             try
             {
@@ -52,12 +61,12 @@ namespace ShopAPI.Controllers
             }
             catch(Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
             }
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] StoreFront store)
+        public async Task<IActionResult> Put([FromBody] StoreFront store)
         {
             try
             {
@@ -65,7 +74,35 @@ namespace ShopAPI.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e);
+                return NotFound();
+            }
+        }
+
+        [HttpPost("ReplenishInventory")]
+        public async Task<IActionResult> ReplenishInventory(int storeId, int productId, int quantity)
+        {
+            try
+            {
+                stores.UpdateStoreInventory(storeId, productId, quantity);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpGet("OrderHistory")]
+        public async Task<IActionResult> ViewOrderHistory(int storeId)
+        {
+            try
+            {
+                //stores.
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound();
             }
         }
 

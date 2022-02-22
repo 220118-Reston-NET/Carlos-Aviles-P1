@@ -8,7 +8,7 @@ namespace ShopUI
 
         public void Print()
         {
-            Console.WriteLine("Welcome to iStore!");
+            Console.WriteLine("Welcome to Shoppn!");
             Console.WriteLine();
             Console.WriteLine("Pick a response below:");
             Console.WriteLine("[1] - Customers");

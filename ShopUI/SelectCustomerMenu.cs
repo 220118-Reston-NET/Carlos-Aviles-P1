@@ -45,7 +45,7 @@ namespace ShopUI
                         Console.WriteLine("Type in your username:");
                         String username = Console.ReadLine();
                         Console.WriteLine("Type in your password:");
-                        String password = Console.ReadLine();
+                        String password = ConsoleUtility.ReadSensitiveLine();
 
                         int loginResult = customers.LoginCustomer(username, password);
                         if (loginResult == 1)
