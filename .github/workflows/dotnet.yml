@@ -49,10 +49,10 @@ jobs:
         
     - name: Install SonarCloud scanner
       if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-      shell: powershell
+      shell: pwsh #NOTED: Changed from Powershell to pwsh
       run: |
-        New-Item -Path .\.sonar\scanner -ItemType Directory
-        dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool install dotnet-sonarscanner --version 5.5.3 --tool-path .\.sonar\scanner
           
     - name: Restore dependencies
       run: dotnet restore
@@ -66,8 +66,8 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       shell: pwsh
       run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"220118-Reston-NET_Carlos-Aviles-P1" /o:"220118-reston-net" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.exclusion="**PokeApi/wwwroot/lib/**" /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.vstest.reportsPath="**/TestResult/*trx"
-          dotnet build ./ -c Release
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"220118-Reston-NET_Carlos-Aviles-P1" /o:"220118-reston-net" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"  /d:sonar.exclusion="**PokeApi/wwwroot/lib/**" /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.vstest.reportsPath="**/TestResults/*.trx"
+          dotnet build ./ShopAPI -c Release
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
     - name: Build
