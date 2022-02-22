@@ -49,10 +49,10 @@ jobs:
         
     - name: Install SonarCloud scanner
       if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-      shell: pwsh #NOTED: Changed from Powershell to pwsh
+      shell: powershell #Changed from powershell to pwsh
       run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
-          dotnet tool install dotnet-sonarscanner --version 5.5.3 --tool-path .\.sonar\scanner
+        New-Item -Path .\.sonar\scanner -ItemType Directory
+        dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
           
     - name: Restore dependencies
       run: dotnet restore
