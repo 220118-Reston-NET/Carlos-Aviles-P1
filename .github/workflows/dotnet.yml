@@ -41,4 +41,4 @@ jobs:
         app-name: ShopAppWS
         slot-name: 'Production'
         publish-profile: $${{Secrets.SHOPAPPWS}}
-        package: /publish
+        package: ./publish
