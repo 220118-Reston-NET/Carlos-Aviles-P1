@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/a8938449-c2ce-4f22-abee-7b727cd4c8c1/resourceGroups/Carlos-Aviles-P0/providers/Microsoft.Web/sites/ShopAppWS",
-    "appService.deploySubpath": "ShopAPI/publish"
-}
