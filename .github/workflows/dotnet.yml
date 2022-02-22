@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: linux-latest
+    runs-on: windows-latest
     environment:
       name: 'Production'
     defaults:
@@ -49,7 +49,7 @@ jobs:
         
     - name: Install SonarCloud scanner
       if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
-      shell: powershell #Changed from powershell to pwsh
+      shell: powershell
       run: |
         New-Item -Path .\.sonar\scanner -ItemType Directory
         dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
