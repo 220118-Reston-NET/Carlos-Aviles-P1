@@ -2,3 +2,5 @@ ShopDL/db/
 ShopAPI/publish/
 ShopAPI/bin/
 ShopTest/bin/
+ShopAPI/appsettings.json
+ShopAPI/appsettings.Development.json
