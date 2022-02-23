@@ -46,7 +46,6 @@ namespace ShopModel
             set { _price = value; }
         }
 
-        /* The time this order was created. */
         private DateTime _dateCreated;
         public DateTime DateCreated
         {

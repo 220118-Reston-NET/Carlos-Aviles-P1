@@ -1,4 +1,5 @@
 using System.Data.SqlClient;
+using System.Text.Json;
 using ShopModel;
 
 namespace ShopDL
@@ -111,35 +112,6 @@ namespace ShopDL
             return listOfCustomers;
         }
 
-        public async Task<List<Customer>> GetCustomersAsync()
-        {
-            List<Customer> listOfCustomers = new List<Customer>();
-            string query = @"select * from [Customer]";
-
-            using (SqlConnection connection = new SqlConnection(connectionURL))
-            {
-                await connection.OpenAsync();
-
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = await command.ExecuteReaderAsync();
-
-                while (await reader.ReadAsync())
-                {
-                    listOfCustomers.Add(new Customer() {
-                        Id = reader.GetInt32(0),
-                        Name = reader.GetString(1),
-                        Age = reader.GetInt32(2),
-                        Address = reader.GetString(3),
-                        Phone = reader.GetString(4),
-                        Orders = GetOrders(reader.GetInt32(0)),
-                        Username = reader.GetString(5)
-                    });
-                }
-            }
-
-            return listOfCustomers;
-        }
-
         public int LoginCustomer(string username, string password)
         {
             int loginResult = 0;
@@ -185,6 +157,35 @@ namespace ShopDL
                 }
             }
             return loadedOrders;
+        }
+
+        public async Task<List<Customer>> GetCustomersAsync()
+        {
+            List<Customer> listOfCustomers = new List<Customer>();
+            string query = @"select * from [Customer]";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                await connection.OpenAsync();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                while (await reader.ReadAsync())
+                {
+                    listOfCustomers.Add(new Customer() {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Age = reader.GetInt32(2),
+                        Address = reader.GetString(3),
+                        Phone = reader.GetString(4),
+                        Orders = GetOrders(reader.GetInt32(0)),
+                        Username = reader.GetString(5)
+                    });
+                }
+            }
+
+            return listOfCustomers;
         }
 
         public List<PurchasedItem> GetPurchasedItems(int orderId)

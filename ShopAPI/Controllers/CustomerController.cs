@@ -1,13 +1,17 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using ShopBL;
 using ShopModel;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ShopAPI.Controllers
 {
 
+
     [ApiController]
     [Route("[controller]")]
+    [SwaggerTag("Everything about customers")]
     public class CustomerController : ControllerBase
     {
 
@@ -15,7 +19,6 @@ namespace ShopAPI.Controllers
         private IOrders orders;
 
         private IMemoryCache cache;
-
         public CustomerController(ICustomers customers, IOrders orders, IMemoryCache cache)
         {
             this.customers = customers;
@@ -24,6 +27,8 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(Summary="Gets all customers from the database")]
+        [Authorize]
         public async Task<IActionResult> GetAllCustomers()
         {
             try
@@ -44,7 +49,8 @@ namespace ShopAPI.Controllers
 
         [Route("{id:int}")]
         [HttpGet]
-        public async Task<IActionResult> GetCustomerById([FromQuery] int id)
+        [SwaggerOperation(Summary="Retrieves an existing customer using an id")]
+        public async Task<IActionResult> GetCustomerById(int id)
         {
             try
             {
@@ -58,7 +64,8 @@ namespace ShopAPI.Controllers
 
         [Route("{name}")]
         [HttpGet]
-        public async Task<IActionResult> GetCustomerByName([FromQuery] string name)
+        [SwaggerOperation(Summary="Retrieves an existing customer using a name")]
+        public async Task<IActionResult> GetCustomerByName(string name)
         {
             try
             {
@@ -71,6 +78,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpPost("Add")]
+        [SwaggerOperation(Summary="Adds a customer to the database")]
         public async Task<IActionResult> Post([FromBody] Customer customer)
         {
             try
@@ -84,6 +92,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpPut]
+        [SwaggerOperation(Summary="Updates a customer in the database using JSON")]
         public async Task<IActionResult> Put([FromBody] Customer customer)
         {
             try
@@ -98,6 +107,7 @@ namespace ShopAPI.Controllers
 
         [Route("Delete/")]
         [HttpDelete]
+        [SwaggerOperation(Summary="Deletes an existing customer from the database")]
         public async Task<IActionResult> Delete([FromBody] Customer customer)
         {
             try
@@ -111,6 +121,7 @@ namespace ShopAPI.Controllers
         }
         
         [HttpPost("PlaceOrder")]
+        [SwaggerOperation(Summary="Places an order for a customer")]
         public IActionResult PlaceOrder(int customerId, [FromBody] List<CartItem> items, int storeId)
         {
             try

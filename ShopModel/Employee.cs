@@ -14,7 +14,6 @@
             set { _id = value; }
         }
 
-        /* The unique identification of the store. */
         private int _storeId;
         public int StoreId {
             get { return _storeId; }

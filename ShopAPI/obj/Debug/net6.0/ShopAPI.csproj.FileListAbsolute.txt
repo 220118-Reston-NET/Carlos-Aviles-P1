@@ -84,3 +84,11 @@
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/obj/Debug/net6.0/ref/ShopAPI.dll
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/obj/Debug/net6.0/ShopAPI.pdb
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/obj/Debug/net6.0/ShopAPI.genruntimeconfig.cache
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Swashbuckle.AspNetCore.Annotations.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll

@@ -23,6 +23,11 @@ namespace ShopModel
             set { _quantity = value; }
         }
 
+        public CartItem()
+        {
+            
+        }
+
         /// <summary>
         /// Instantiaes a new cart item instance.
         /// </summary>

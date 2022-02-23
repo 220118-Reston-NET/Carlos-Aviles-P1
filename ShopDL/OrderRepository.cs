@@ -1,4 +1,5 @@
 using System.Data.SqlClient;
+using System.Text.Json;
 using ShopModel;
 
 namespace ShopDL
@@ -24,8 +25,7 @@ namespace ShopDL
 
         public Order PlaceOrder(int customerId, List<CartItem> item, int storeId)
         {
-            double totalPrice = GetCartTotal(item);
-
+            Order order = new Order();
             string orderQuery = @"insert into [Order]
                 values(@storeId, @totalPrice, @dateCreated); SELECT SCOPE_IDENTITY();";
             
@@ -38,9 +38,8 @@ namespace ShopDL
             string coQuery = @"insert into [customers_orders]
                 values(@customerId, @orderId)";
 
+            decimal totalPrice = (decimal) GetCartTotal(item);
             DateTime dateCreated = DateTime.Now;
-            List<PurchasedItem> items = new List<PurchasedItem>();
-
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
                 connection.Open();
@@ -52,7 +51,8 @@ namespace ShopDL
                 command.Parameters.AddWithValue("@dateCreated", dateCreated);
 
                 int orderId = Convert.ToInt32(command.ExecuteScalar());
-                int quantity = 0;
+
+                List<PurchasedItem> items = new List<PurchasedItem>();
                 
                 //Insert into purhcaseditem table
                 command = new SqlCommand(purchasedQuery, connection);
@@ -63,10 +63,7 @@ namespace ShopDL
                     command.Parameters.AddWithValue("@productId", _item.Item.Id);
                     command.Parameters.AddWithValue("@quantity", _item.Quantity);
                     command.ExecuteNonQuery();
-                    quantity += _item.Quantity;
-                    items.Add(new PurchasedItem()
-                    {
-                        OrderId = orderId,
+                    items.Add(new PurchasedItem(){
                         Item = _item.Item,
                         Quantity = _item.Quantity
                     });
@@ -86,15 +83,13 @@ namespace ShopDL
                 command.Parameters.AddWithValue("@orderId", orderId);
                 command.ExecuteNonQuery();
 
-                Order order = new Order() {
-                    Id = orderId,
-                    Items = items,
-                    Quantity = quantity,
-                    Price = (decimal) totalPrice,
-                    DateCreated = dateCreated
-                };
-                return order;
+                order.Id = orderId;
+                order.Price = totalPrice;
+                order.DateCreated = dateCreated;
+                order.Items = items;
+                order.Location = ""+ storeId;
             }
+            return order;
         }
 
         public List<Order> GetOrders()

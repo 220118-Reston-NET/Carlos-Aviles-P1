@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using ShopBL;
 using ShopModel;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ShopAPI.Controllers
 {
 
     [ApiController]
     [Route("[controller]")]
+    [SwaggerTag("Everything about stores")]
     public class StoreController : ControllerBase
     {
 
@@ -21,6 +23,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(Summary="Gets all stores from the database")]
         public async Task<IActionResult> GetAllStores()
         {
             try
@@ -40,6 +43,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet("{id}", Name = "GetStoreById")]
+        [SwaggerOperation(Summary="Retrieves a store using an id")]
         public async Task<IActionResult> GetStoreById(int id)
         {
             try
@@ -53,6 +57,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpPost("Add")]
+        [SwaggerOperation(Summary="Adds a new store to the database")]
         public async Task<IActionResult> Post([FromBody] StoreFront store)
         {
             try
@@ -66,6 +71,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpPut]
+        [SwaggerOperation(Summary="Updates store data to the database")]
         public async Task<IActionResult> Put([FromBody] StoreFront store)
         {
             try
@@ -79,6 +85,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpPost("ReplenishInventory")]
+        [SwaggerOperation(Summary="Updates a store's inventory")]
         public async Task<IActionResult> ReplenishInventory(int storeId, int productId, int quantity)
         {
             try
@@ -93,6 +100,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet("OrderHistory")]
+        [SwaggerOperation(Summary="Views all ordres made in a specific store")]
         public async Task<IActionResult> ViewOrderHistory(int storeId)
         {
             try

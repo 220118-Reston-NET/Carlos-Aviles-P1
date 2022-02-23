@@ -54,7 +54,6 @@
             set { _orders = value; }
         }
 
-        /* The unique username of this customer's profile. */
         private string _username;
         public string Username
         {
@@ -62,7 +61,6 @@
             set { _username = value; }
         }
 
-        /* The unique password of this customer's profile. */
         private string _password;
         public string Password
         {

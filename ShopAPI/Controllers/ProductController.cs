@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using ShopBL;
 using ShopModel;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ShopAPI.Controllers
 {
 
     [ApiController]
     [Route("[controller]")]
+    [SwaggerTag("Everything about products")]
     public class ProductController : ControllerBase
     {
 
@@ -22,6 +24,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(Summary="Gets all products from the database")]
         public async Task<IActionResult> GetAllProducts()
         {
             try
@@ -42,6 +45,7 @@ namespace ShopAPI.Controllers
 
         [Route("{id:int}")]
         [HttpGet]
+        [SwaggerOperation(Summary="Retrieves a product using an id")]
         public async Task<IActionResult> GetProductById(int id)
         {
             try
@@ -56,6 +60,7 @@ namespace ShopAPI.Controllers
 
         [Route("{name}")]
         [HttpGet]
+        [SwaggerOperation(Summary="Retrieves a product using a name")]
         public async Task<IActionResult> GetProductByName(string name)
         {
             try
