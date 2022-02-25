@@ -12,8 +12,10 @@ namespace ShopTest
             //arrange
             int id = 1;
             string name = "Steak";
+            int quantity = 1;
             Product _product = new Product();
-            CartItem _CartItem = new CartItem(_product, 1);
+            CartItem _CartItem = new CartItem(_product, quantity);
+            CartItem _cart = new CartItem();
 
             //act
             _product.Id = id;
@@ -25,7 +27,9 @@ namespace ShopTest
 
             //assert
             Assert.NotNull(_CartItem.Item);
+            Assert.Equal(_CartItem.Quantity, quantity);
             Assert.NotNull(_product);
+            Assert.NotNull(_cart);
         }
     }
 }
