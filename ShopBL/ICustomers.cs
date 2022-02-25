@@ -55,46 +55,11 @@ namespace ShopBL
         Customer GetCustomerFromId(int customerId);
 
         /// <summary>
-        /// Gets a list of customers with the exact name.
-        /// </summary>
-        /// <param name="name">The customer name.</param>
-        /// <returns>The list of customers.</returns>
-        List<Customer> GetCustomersWithExactName(string name);
-
-        /// <summary>
-        /// Gets a list of similar customers by finding any that having a matching name.
-        /// </summary>
-        /// <param name="name">The customer name.</param>
-        /// <returns>The list of similar customers.</returns>
-        List<Customer> GetSimilarCustomersByName(string name);
-
-        /// <summary>
-        /// Gets a list of similar customers by finding any that having a matching address.
-        /// </summary>
-        /// <param name="address">The customer address.</param>
-        /// <returns>The list of similar customers.</returns>
-        List<Customer> GetSimilarCustomersByAddress(string address);
-
-        /// <summary>
         /// Gets the customer instance by trying to find a customer with the exact full name.
         /// </summary>
         /// <param name="name">The customer name provided.</param>
         /// <returns>The customer instance.</returns>
         Customer GetCustomerByName(string name);
-
-        /// <summary>
-        /// Gets the customer instance by trying to find a customer with the exact address.
-        /// </summary>
-        /// <param name="address">The customer home addresse provided.</param>
-        /// <returns>The customer instance.</returns>
-        Customer GetCustomerByAddress(string address);
-
-        /// <summary>
-        /// Gets the customer instance by trying to find a customer with the exact phone number.
-        /// </summary>
-        /// <param name="phone">The phone number provided.</param>
-        /// <returns>The customer instance.</returns>
-        Customer GetCustomerByPhone(string phone);
 
         /// <summary>
         /// A flag that checks if customer data is empty.

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Moq;
 using ShopBL;
 using ShopDL;
@@ -164,6 +165,34 @@ namespace ShopTest
             Assert.Same(expectingCustomer, notNullCustomer);
             Assert.NotNull(notNullCustomer);
             Assert.Null(nullCust);
+        }
+
+        [Fact]
+        public async Task ShouldGetCustomerAsync()
+        {
+            //arrange
+            string name = "Abigail S";
+            Customer _customer = new Customer() {
+                Name = name,
+                Address = "Wood House",
+
+                Age = 18
+
+            };
+            List<Customer> expectedList = new List<Customer>();
+            expectedList.Add(_customer);
+
+            Mock<ICustomerRepo> mockRepo = new Mock<ICustomerRepo>();
+            mockRepo.Setup(repo => repo.GetCustomersAsync()).ReturnsAsync(expectedList);
+
+            ICustomers customers = new Customers(mockRepo.Object);
+
+            //act
+            List<Customer> actualList = await customers.GetCustomersAsync();
+
+            //assert
+            Assert.Same(expectedList, actualList);
+            Assert.Equal(name, actualList[0].Name);
         }
     }
 }
