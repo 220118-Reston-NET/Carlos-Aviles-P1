@@ -27,6 +27,11 @@ namespace ShopTest
 
             //assert
             Assert.NotNull(_employee);
+            Assert.Equal(id, _employee.Id);
+            Assert.Equal(storeId, _employee.StoreId);
+            Assert.Equal(_name, _employee.Name);
+            Assert.Equal(_username, _employee.Username);
+            Assert.Equal(password, _employee.Password);
         }
     }
 }

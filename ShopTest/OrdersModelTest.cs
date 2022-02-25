@@ -7,6 +7,7 @@ namespace ShopTest
 
     public class OrdersModelTest
     {
+        
         [Fact]
         public void OrdersShouldSetValidData()
         {
