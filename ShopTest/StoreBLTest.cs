@@ -12,7 +12,32 @@ namespace ShopTest
     {
 
         [Fact]
-        public void StoreShouldSetValidData()
+        public void ShouldAddStore()
+        {
+            //arrange
+            int id = 1;
+            string name = "Nutrient North";
+            string address = "Georgia";
+            StoreFront store = new StoreFront() {
+                Id = id,
+                Name = name,
+                Address = address
+            };
+
+            Mock<IStoreRepo> mockRepo = new Mock<IStoreRepo>();
+            mockRepo.Setup(repo => repo.AddStore(store)).Returns(store);
+
+            IStores Stores = new Stores(mockRepo.Object);
+
+            //act
+            StoreFront actualStore = Stores.AddStore(store);
+
+            //assert
+            Assert.Same(store, actualStore);
+        }
+
+        [Fact]
+        public void StoreShouldUpdate()
         {
             //arrange
             int id = 1;
