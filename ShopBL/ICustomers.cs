@@ -55,41 +55,6 @@ namespace ShopBL
         Customer GetCustomerFromId(int customerId);
 
         /// <summary>
-        /// Search for a customer by trying to find them using the exact name.
-        /// </summary>
-        /// <param name="name">The name of the customer.</param>
-        /// <returns>If the customer was found.</returns>
-        bool SearchCustomerByExactName(string name);
-
-        /// <summary>
-        /// Search for a customer by name, using existing characters.
-        /// </summary>
-        /// <param name="name">The name of the customer.</param>
-        /// <returns>If the customer was found.</returns>
-        bool SearchCustomerByName(string name);
-
-        /// <summary>
-        /// Search for a customer by trying to find them using the exact address.
-        /// </summary>
-        /// <param name="address">The address of the customer.</param>
-        /// <returns>If the customer was found.</returns>
-        bool SearchCustomerByExactAddress(string address);
-
-        /// <summary>
-        /// Search for a customer by address, using existing characters.
-        /// </summary>
-        /// <param name="address">The address of the customer.</param>
-        /// <returns>If the customer was found.</returns>
-        bool SearchCustomerByAddress(string address);
-
-        /// <summary>
-        /// Search for a customer by trying to find them using the exact phone number.
-        /// </summary>
-        /// <param name="phone">The phone number of the customer.</param>
-        /// <returns>If the customer was found.</returns>
-        bool SearchCustomerByPhone(string phone);
-
-        /// <summary>
         /// Gets a list of customers with the exact name.
         /// </summary>
         /// <param name="name">The customer name.</param>

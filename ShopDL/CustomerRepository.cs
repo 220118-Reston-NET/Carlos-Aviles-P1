@@ -233,50 +233,6 @@ namespace ShopDL
             return GetCustomers().First(customer => customer.Id == customerId);
         }
 
-        public bool SearchCustomerByExactName(string name) {
-            for(int index = 0; index < GetCustomers().Count; index++)
-            {
-                Customer customer = GetCustomers()[index];
-                if(customer.Name == name)
-                    return true;
-            }
-            return false;
-        }
-
-        public bool SearchCustomerByName(string name)
-        {
-            bool flag = GetCustomers().Any(customer => customer.Name.Contains(name));
-            return flag;
-        }
-
-        public bool SearchCustomerByExactAddress(string address)
-        {
-            for(int index = 0; index < GetCustomers().Count; index++)
-            {
-                Customer customer = GetCustomers()[index];
-                if(customer.Address == address)
-                    return true;
-            }
-            return false;
-        }
-
-        public bool SearchCustomerByAddress(string address)
-        {
-            bool flag = GetCustomers().Any(customers => customers.Address.Contains(address));
-            return flag;
-        }
-
-        public bool SearchCustomerByPhone(string phone)
-        {
-            for(int index = 0; index < GetCustomers().Count; index++)
-            {
-                Customer customer = GetCustomers()[index];
-                if(customer.Phone == phone)
-                    return true;
-            }
-            return false;
-        }
-
         public List<Customer> GetCustomersWithExactName(string name)
         {
             return GetCustomers().FindAll(customer => customer.Name.Equals(name));

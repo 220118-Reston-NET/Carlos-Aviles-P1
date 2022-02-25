@@ -62,30 +62,6 @@ namespace ShopBL
             return repo.GetCustomerFromId(customerId);
         }
 
-        public bool SearchCustomerByExactName(string name) {
-            return repo.SearchCustomerByExactName(name);
-        }
-
-        public bool SearchCustomerByName(string name)
-        {
-            return repo.SearchCustomerByName(name);
-        }
-
-        public bool SearchCustomerByExactAddress(string address)
-        {
-            return repo.SearchCustomerByExactAddress(address);
-        }
-
-        public bool SearchCustomerByAddress(string address)
-        {
-            return repo.SearchCustomerByAddress(address);
-        }
-
-        public bool SearchCustomerByPhone(string phone)
-        {
-            return repo.SearchCustomerByPhone(phone);
-        }
-
         public List<Customer> GetCustomersWithExactName(string name)
         {
             return repo.GetCustomersWithExactName(name);
