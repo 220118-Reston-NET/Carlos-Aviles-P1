@@ -24,5 +24,7 @@ namespace ShopDL
         List<Order> GetOrders();
 
         double GetCartTotal(List<CartItem> items);
+
+        Product GetProductFromOrder(int productId);
     }
 }

@@ -130,5 +130,10 @@ namespace ShopBL
         {
             return repo.GetCustomerFromUsername(username);
         }
+
+        public string DisplayOrderHistory(List<Order> orders)
+        {
+            return repo.DisplayOrderHistory(orders);
+        }
     }
 }

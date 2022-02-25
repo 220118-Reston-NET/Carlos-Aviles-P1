@@ -10,6 +10,7 @@ namespace ShopTest
 
     public class StoreBLTest
     {
+
         [Fact]
         public void StoreShouldSetValidData()
         {
@@ -37,6 +38,34 @@ namespace ShopTest
             Assert.Same(expectedList, actualList);
             Assert.Equal(id, actualList[0].Id);
             Assert.Equal(name, actualList[0].Name);
+        }
+
+        [Fact]
+        public void StoreShouldGetOrder()
+        {
+            //arrange
+            Order order = new Order()
+            {
+                Id = 0,
+                Quantity = 1,
+                Location = "Store",
+                Price = (decimal) 1.5
+            };
+            List<Order> expectedList = new List<Order>();
+            expectedList.Add(order);
+
+            Mock<IStoreRepo> mockRepo = new Mock<IStoreRepo>();
+            mockRepo.Setup(repo => repo.GetOrders(order.Id)).Returns(expectedList);
+
+            IStores Stores = new Stores(mockRepo.Object);
+
+            //act
+            List<Order> actualList = Stores.GetOrders(order.Id);
+
+            //assert
+            Assert.Same(expectedList, actualList);
+            Assert.Equal(order.Id, actualList[0].Id);
+            Assert.Equal(order.Price, actualList[0].Price);
         }
     }
 }

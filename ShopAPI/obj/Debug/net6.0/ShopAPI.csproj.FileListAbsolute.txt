@@ -92,3 +92,49 @@
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Swashbuckle.AspNetCore.Newtonsoft.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Dapper.dll

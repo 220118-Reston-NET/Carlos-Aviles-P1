@@ -1,51 +1,73 @@
+
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Converters;
+using Repository;
 using ShopBL;
 using ShopDL;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using ShopModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddMemoryCache();
-builder.Services.AddControllers();
+builder.Services.AddSwaggerGenNewtonsoftSupport();
+builder.Services.AddControllers().AddNewtonsoftJson(o =>
+{
+    o.SerializerSettings.Converters.Add(new StringEnumConverter
+    {
+        CamelCaseText = true
+    });
+    var converter = new StringEnumConverter(namingStrategy: new Newtonsoft.Json.Serialization.CamelCaseNamingStrategy());
+	o.SerializerSettings.Converters.Add(converter);
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSwaggerGen(c => {
-    c.EnableAnnotations();
-});
-builder.Services.AddAuthentication(options => {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-});
-builder.Services.AddSwaggerGen(setup =>
-{
-    var jwtSecurityScheme = new OpenApiSecurityScheme
+builder.Services.AddScoped<IJWTAuthManager, JWTAuthManager>();
+builder.Services.AddSwaggerGen(option => {
+    option.EnableAnnotations();
+    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
-        Scheme = "bearer",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
         BearerFormat = "JWT",
-        Name = "JWT Authentication",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,
-        Description = "Put **_ONLY_** your JWT Bearer token on textbox below!",
-
-        Reference = new OpenApiReference
-        {
-            Id = JwtBearerDefaults.AuthenticationScheme,
-            Type = ReferenceType.SecurityScheme
-        }
-    };
-
-    setup.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
-
-    setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
+    });
+    option.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
-        { jwtSecurityScheme, Array.Empty<string>() }
+        {
+            new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                new string[] {}
+        }
     });
 });
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["JwtAuth:Issuer"],
+        ValidAudience = builder.Configuration["JwtAuth:Issuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtAuth:Key"]))
+    }
+);
+builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<ICustomerRepo>(repo => new CustomerRepository(builder.Configuration.GetConnectionString("ShopAppDB")));
 builder.Services.AddScoped<IStoreRepo>(repo => new StoreRepository(builder.Configuration.GetConnectionString("ShopAppDB")));
@@ -68,6 +90,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

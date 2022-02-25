@@ -116,6 +116,40 @@ namespace ShopDL
             return _loadedOrders;
         }
 
+        public Product GetProductFromOrder(int productId)
+        {
+            Product product = new Product();
+            List<Product> _loadedProducts = new List<Product>();
+            string query = @"select * from [Product]";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    _loadedProducts.Add(new Product() {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Price = reader.GetDouble(2),
+                        Description = reader.GetString(3),
+                        Category = reader.GetString(4),
+                        MinimumAge = reader.GetInt32(5)
+                    });
+                }
+            }
+
+            foreach(Product prod in _loadedProducts)
+            {
+                if (productId == prod.Id)
+                    return prod;
+            }
+            return product;
+        }
+
         /// <summary>
         /// Gets the total dollar value of the customer's cart.
         /// </summary>

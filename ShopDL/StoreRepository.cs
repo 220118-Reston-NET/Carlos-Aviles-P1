@@ -296,5 +296,18 @@ namespace ShopDL
                     return true;
             return false;
         }
+
+        public string DisplayOrderHistory(List<Order> orders)
+        {
+            string text = "";
+            foreach (Order _order in orders)
+            {
+                text += "\nThis order ("+ _order.Id +") was a total of $"+ _order.Price +"\n";
+                foreach (PurchasedItem _item in _order.Items)
+                    text += ("- "+ _item.Item.Name +" was purchased for $"+ _item.Item.Price +" each ("+ _item.Quantity +"x)\n");
+                text += "This order was created on "+ _order.DateCreated+" in "+ _order.Location +"\n";
+            }
+            return text;
+        }
     }
 }

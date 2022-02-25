@@ -126,5 +126,7 @@ namespace ShopDL
         /// <param name="store">The store instance</param>
         /// <returns>If there are items in stock, it will return true</returns>
         bool hasInventory(StoreFront store);
+
+        string DisplayOrderHistory(List<Order> orders);
     }
 }

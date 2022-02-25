@@ -47,6 +47,11 @@ namespace ShopBL
             return repo.GetStoresAsync();
         }
 
+        public List<Order> GetOrders(int storeId)
+        {
+            return repo.GetOrders(storeId);
+        }
+
         public List<LineItem> GetLineItems(int storeId)
         {
             return repo.GetLineItems(storeId);
@@ -90,6 +95,11 @@ namespace ShopBL
         public bool hasInventory(StoreFront store)
         {
             return repo.hasInventory(store);
+        }
+
+        public string DisplayOrderHistory(List<Order> orders)
+        {
+            return repo.DisplayOrderHistory(orders);
         }
     }
 }

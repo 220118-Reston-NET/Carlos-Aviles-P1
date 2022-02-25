@@ -23,6 +23,13 @@ namespace ShopBL
         }
         public Order PlaceOrder(int customerId, List<CartItem> items, int storeId)
         {
+            if (items.Count == 0)
+                throw new Exception("You don't have anything in your cart!");
+            foreach(CartItem item in items)
+            {
+                if (item.Quantity == 0)
+                    throw new Exception("You must have at-least one quantity for "+ repo.GetProductFromOrder(item.Item.Id).Name +"!");
+            }
             return repo.PlaceOrder(customerId, items, storeId);
         }
 

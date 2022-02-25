@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -28,7 +29,7 @@ namespace ShopAPI.Controllers
 
         [HttpGet]
         [SwaggerOperation(Summary="Gets all customers from the database")]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllCustomers()
         {
             try
@@ -127,6 +128,32 @@ namespace ShopAPI.Controllers
             try
             {
                 return Created("Created order!", orders.PlaceOrder(customerId, items, storeId));
+            }
+            catch (Exception e)
+            {
+                return StatusCode(422, e.Message);
+            }
+        }
+
+        [HttpGet("ViewOrderHistory")]
+        [SwaggerOperation(Summary = "Views a particular customer's order history")]
+         public async Task<IActionResult> ViewOrder(int customerId, OrderSort type)
+        {
+            try
+            {
+                switch(type)
+                {
+                    case OrderSort.MostRecent:
+                        List<Order> recent = customers.GetOrders(customerId);
+                        recent.Reverse();
+                        return Ok(customers.DisplayOrderHistory(recent));
+                    case OrderSort.TotalPrice:
+                        List<Order> total = customers.GetOrders(customerId);
+                        total = total.OrderBy(order => order.Price).ToList();
+                        total.Reverse();
+                        return Ok(customers.DisplayOrderHistory(total));
+                }
+                return Ok(customers.GetOrders(customerId));
             }
             catch (Exception e)
             {

@@ -44,6 +44,13 @@ namespace ShopBL
         Task<List<StoreFront>> GetStoresAsync();
 
         /// <summary>
+        /// Gets all the orders from a specific store from the database.
+        /// </summary>
+        /// <param name="storeId">The stores's unique identification.</param>
+        /// <returns>The list of orders.</returns>
+        List<Order> GetOrders(int storeId);
+
+        /// <summary>
         /// Gets all the items in stock in a specified store.
         /// </summary>
         /// <param name="storeId">The store's unique identification.</param>
@@ -105,5 +112,7 @@ namespace ShopBL
         /// <param name="store">The store instance</param>
         /// <returns>If there are items in stock, it will return true</returns>
         bool hasInventory(StoreFront store);
+
+        string DisplayOrderHistory(List<Order> orders);
     }
 }

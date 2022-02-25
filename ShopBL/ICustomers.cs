@@ -146,5 +146,7 @@ namespace ShopBL
         Customer GetCustomerFromOrder(int id);
 
         Customer GetCustomerFromUsername(string username);
+
+        string DisplayOrderHistory(List<Order> orders);
     }
 }
