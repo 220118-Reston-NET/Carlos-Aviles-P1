@@ -1,4 +1,4 @@
-namespace ShopModel
+namespace ShopAPI
 {
     public enum OrderSort
     {
