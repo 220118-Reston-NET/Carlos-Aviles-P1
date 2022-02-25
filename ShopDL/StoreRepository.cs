@@ -240,40 +240,6 @@ namespace ShopDL
             return total;
         }
 
-        public bool SearchStoreByExactName(string name)
-        {
-            for(int index = 0; index < GetStores().Count; index++)
-            {
-                StoreFront store = GetStores()[index];
-                if(store.Name == name)
-                    return true;
-            }
-            return false;
-        }
-
-        public bool SearchStoreByName(string name)
-        {
-            bool flag = GetStores().Any(store => store.Name.Contains(name));
-            return flag;
-        }
-
-        public bool SearchStoreByExactAddress(string address)
-        {
-            for(int index = 0; index < GetStores().Count; index++)
-            {
-                StoreFront store = GetStores()[index];
-                if(store.Address == address)
-                    return true;
-            }
-            return false;
-        }
-
-        public bool SearchStoreByAddress(string address)
-        {
-            bool flag = GetStores().Any(store => store.Address.Contains(address));
-            return flag;
-        }
-
         public List<StoreFront> GetSimilarStoresByName(string name)
         {
             return GetStores().FindAll(store => store.Name.Contains(name));   

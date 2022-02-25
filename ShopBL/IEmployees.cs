@@ -16,8 +16,5 @@ namespace ShopBL
 
         int LoginEmployee(string username, string password);
 
-        List<Employee> GetEmployeesFromStoreId(int storeId);
-
-        Employee GetEmployeeFromUsername(string username);
     }
 }

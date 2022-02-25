@@ -62,26 +62,6 @@ namespace ShopBL
             return repo.GetStoreFront(storeId);
         }
 
-        public bool SearchStoreByExactName(string name)
-        {
-            return repo.SearchStoreByExactName(name);
-        }
-
-        public bool SearchStoreByName(string name)
-        {
-            return repo.SearchStoreByName(name);
-        }
-
-        public bool SearchStoreByExactAddress(string address)
-        {
-            return repo.SearchStoreByExactAddress(address);
-        }
-
-        public bool SearchStoreByAddress(string address)
-        {
-            return repo.SearchStoreByAddress(address);
-        }
-
         public List<StoreFront> GetSimilarStoresByName(string name)
         {
             return repo.GetSimilarStoresByName(name);

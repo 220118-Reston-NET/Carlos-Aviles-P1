@@ -41,15 +41,5 @@ namespace ShopBL
         {
             return repo.LoginEmployee(username, password);
         }
-
-        public List<Employee> GetEmployeesFromStoreId(int storeId)
-        {
-            return repo.GetEmployeesFromStoreId(storeId);
-        }
-
-        public Employee GetEmployeeFromUsername(string username)
-        {
-            return repo.GetEmployeeFromUsername(username);
-        }
     }
 }

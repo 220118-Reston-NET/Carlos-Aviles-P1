@@ -102,11 +102,6 @@ namespace ShopBL
             return repo.GetCustomerFromOrder(id);
         }
 
-        public Customer GetCustomerFromUsername(string username)
-        {
-            return repo.GetCustomerFromUsername(username);
-        }
-
         public string DisplayOrderHistory(List<Order> orders)
         {
             return repo.DisplayOrderHistory(orders);

@@ -65,34 +65,6 @@ namespace ShopBL
         StoreFront GetStoreFront(int storeId);
 
         /// <summary>
-        /// Search for a store by trying to find them using the exact name.
-        /// </summary>
-        /// <param name="name">The name of the store.</param>
-        /// <returns>If the store was found.</returns>
-        bool SearchStoreByExactName(string name);
-
-        /// <summary>
-        /// Search for a store by name, using existing characters.
-        /// </summary>
-        /// <param name="name">The name of the store.</param>
-        /// <returns>If the store was found.</returns>
-        bool SearchStoreByName(string name);
-
-        /// <summary>
-        /// Search for a store by trying to find it using the exact address.
-        /// </summary>
-        /// <param name="address">The address of the store.</param>
-        /// <returns>If the store was found.</returns>
-        bool SearchStoreByExactAddress(string address);
-
-        /// <summary>
-        /// Search for a store by address, using existing characters.
-        /// </summary>
-        /// <param name="_store">The address of the store.</param>
-        /// <returns>If the store was found.</returns>
-        bool SearchStoreByAddress(string address);
-
-        /// <summary>
         /// Gets a list of similar stores by finding any that having a matching name.
         /// </summary>
         /// <param name="name">The store name.</param>

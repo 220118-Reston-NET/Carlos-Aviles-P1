@@ -10,6 +10,55 @@ namespace ShopTest
 
     public class EmployeeBLTest
     {
+
+        [Fact]
+        public void ShouldAddEmployee()
+        {
+            //arrange
+            string name = "Abigail Smith";
+            string user = "abig";
+            Employee _employee = new Employee() {
+                Name = name,
+                Username = user
+            };
+
+            Mock<IEmployeeRepo> mockRepo = new Mock<IEmployeeRepo>();
+            mockRepo.Setup(repo => repo.AddEmployee(_employee)).Returns(_employee);
+
+            IEmployees employees = new Employees(mockRepo.Object);
+
+            //act
+            Employee actual = employees.AddEmployee(_employee);
+
+            //assert
+            Assert.Same(_employee, actual);
+            Assert.NotNull(actual);
+        }
+
+        [Fact]
+        public void ShouldUpdateEmployee()
+        {
+            //arrange
+            string name = "Abigail Smith";
+            string user = "abig";
+            Employee _employee = new Employee() {
+                Name = name,
+                Username = user
+            };
+
+            Mock<IEmployeeRepo> mockRepo = new Mock<IEmployeeRepo>();
+            mockRepo.Setup(repo => repo.UpdateEmployee(_employee)).Returns(_employee);
+
+            IEmployees employees = new Employees(mockRepo.Object);
+
+            //act
+            Employee actual = employees.UpdateEmployee(_employee);
+
+            //assert
+            Assert.Same(_employee, actual);
+            Assert.NotNull(actual);
+        }
+
         [Fact]
         public void EmployeeShouldSetValidData()
         {
