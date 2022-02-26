@@ -10,7 +10,7 @@ namespace ShopAPI.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    [SwaggerTag("Handles incoming HTTP requests and sends a response back to the caller")]
+    [SwaggerTag("JWT Authentication")]
     public class AccountController : ControllerBase
     {
 
@@ -21,37 +21,8 @@ namespace ShopAPI.Controllers
              _authentication = authentication;
          }
 
-        [HttpPost("Login")]
-        [AllowAnonymous]
-        public IActionResult login([FromBody]LoginModel user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest("Parameter is missing");
-            }
-        
-            DynamicParameters dp_param = new DynamicParameters();
-            dp_param.Add("email",user.email,DbType.String);
-            dp_param.Add("password",user.password,DbType.String);
-            dp_param.Add("retVal", DbType.String, direction: ParameterDirection.Output);
-            var result = _authentication.Execute_Command<UserModel>("sp_loginUser",dp_param);
-            if (result.code == 200)
-            {
-                var token = _authentication.GenerateJWT(result.Data);
-                return Ok(token);
-            }
-            return NotFound(result.Data);
-        }
-
-        [HttpGet("UserList")]
-        [Authorize(Roles = "User")]
-        public IActionResult getAllUsers()
-        {
-            var result = _authentication.getUserList<UserModel>();
-            return Ok(result);
-        }
-
         [HttpPost("Register")]
+        [SwaggerOperation(Summary="Registers a new customer/login user")]
         [Authorize(Roles = "Admin")]
         public IActionResult Register([FromBody]UserModel user)
         {
@@ -73,7 +44,40 @@ namespace ShopAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpPost("Login")]
+        [SwaggerOperation(Summary="Allows users to use this api")]
+        [AllowAnonymous]
+        public IActionResult Login([FromBody]LoginModel user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Parameter is missing");
+            }
+        
+            DynamicParameters dp_param = new DynamicParameters();
+            dp_param.Add("email",user.email,DbType.String);
+            dp_param.Add("password",user.password,DbType.String);
+            dp_param.Add("retVal", DbType.String, direction: ParameterDirection.Output);
+            var result = _authentication.Execute_Command<UserModel>("sp_loginUser",dp_param);
+            if (result.code == 200)
+            {
+                var token = _authentication.GenerateJWT(result.Data);
+                return Ok(token);
+            }
+            return NotFound(result.Data);
+        }
+
+        [HttpGet("UserList")]
+        [SwaggerOperation(Summary="Gets a list of all the api users")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> getAllUsers()
+        {
+            var result = _authentication.getUserList<UserModel>();
+            return Ok(result);
+        }
+
         [HttpDelete("Delete")]
+        [SwaggerOperation(Summary="Deletes a login user")]
         [Authorize(Roles = "Admin")]
         public IActionResult Delete(string id)
         {

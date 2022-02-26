@@ -63,8 +63,14 @@ namespace ShopDL
             return store;
         }
 
-        public void UpdateStoreInventory(int storeId, int productId, int quantity)
+        public StoreFront UpdateStoreInventory(int storeId, int productId, int quantity)
         {
+            StoreFront store = GetStores().Where(store => store.Id == storeId).First();
+            if (quantity <= 0 || quantity > 1000)
+                throw new Exception("Quantity must be more than 0 and less than 1,000!");
+            if (!store.Items.Any(item => item.Product.Id == productId))
+                throw new Exception("This product does not exist in this store.");
+
             string query = @"update LineItem set LineItem.quantity = @quantity
                 where LineItem.storeId = @storeId and LineItem.productId = @productId";
 
@@ -79,6 +85,7 @@ namespace ShopDL
                 
                 command.ExecuteNonQuery();
             }
+            return store;
         }
 
         public List<StoreFront> GetStores()

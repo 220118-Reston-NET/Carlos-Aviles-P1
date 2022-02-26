@@ -74,7 +74,5 @@ namespace ShopBL
         /// <param name="id">The order id.</param>
         /// <returns>The customer instance, if found.</returns>
         Customer GetCustomerFromOrder(int id);
-
-        string DisplayOrderHistory(List<Order> orders);
     }
 }

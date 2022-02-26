@@ -76,10 +76,5 @@ namespace ShopBL
         {
             return repo.GetCustomerFromOrder(id);
         }
-
-        public string DisplayOrderHistory(List<Order> orders)
-        {
-            return repo.DisplayOrderHistory(orders);
-        }
     }
 }

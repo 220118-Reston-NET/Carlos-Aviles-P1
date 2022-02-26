@@ -29,7 +29,7 @@ namespace ShopAPI.Controllers
 
         [HttpGet]
         [SwaggerOperation(Summary="Gets all customers from the database")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetAllCustomers()
         {
             try
@@ -51,6 +51,7 @@ namespace ShopAPI.Controllers
         [Route("{id:int}")]
         [HttpGet]
         [SwaggerOperation(Summary="Retrieves an existing customer using an id")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetCustomerById(int id)
         {
             try
@@ -66,6 +67,7 @@ namespace ShopAPI.Controllers
         [Route("{name}")]
         [HttpGet]
         [SwaggerOperation(Summary="Retrieves an existing customer using a name")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetCustomerByName(string name)
         {
             try
@@ -94,6 +96,7 @@ namespace ShopAPI.Controllers
 
         [HttpPut]
         [SwaggerOperation(Summary="Updates a customer in the database using JSON")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> Put([FromBody] Customer customer)
         {
             try
@@ -109,6 +112,7 @@ namespace ShopAPI.Controllers
         [Route("Delete/")]
         [HttpDelete]
         [SwaggerOperation(Summary="Deletes an existing customer from the database")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete([FromBody] Customer customer)
         {
             try
@@ -123,6 +127,7 @@ namespace ShopAPI.Controllers
         
         [HttpPost("PlaceOrder")]
         [SwaggerOperation(Summary="Places an order for a customer")]
+        [Authorize(Roles = "Customer,Admin")]
         public IActionResult PlaceOrder(int customerId, [FromBody] List<CartItem> items, int storeId)
         {
             try
@@ -137,21 +142,25 @@ namespace ShopAPI.Controllers
 
         [HttpGet("ViewOrderHistory")]
         [SwaggerOperation(Summary = "Views a particular customer's order history")]
+        [Authorize(Roles = "Customer,Admin")]
          public async Task<IActionResult> ViewOrder(int customerId, OrderSort type)
         {
             try
             {
                 switch(type)
                 {
-                    case OrderSort.MostRecent:
-                        List<Order> recent = customers.GetOrders(customerId);
+                    case OrderSort.Oldest:
+                     List<Order> oldest = customers.GetOrders(customerId).OrderBy(order => order.DateCreated).ToList();
+                        return Ok(oldest);
+                    case OrderSort.Recent:
+                        List<Order> recent = customers.GetOrders(customerId).OrderBy(order => order.DateCreated).ToList();
                         recent.Reverse();
-                        return Ok(customers.DisplayOrderHistory(recent));
-                    case OrderSort.TotalPrice:
+                        return Ok(recent);
+                    case OrderSort.Total:
                         List<Order> total = customers.GetOrders(customerId);
                         total = total.OrderBy(order => order.Price).ToList();
                         total.Reverse();
-                        return Ok(customers.DisplayOrderHistory(total));
+                        return Ok(total);
                 }
                 return Ok(customers.GetOrders(customerId));
             }

@@ -2,9 +2,9 @@ namespace ShopAPI
 {
     public enum OrderSort
     {
-        MostRecent,
-        TotalPrice,
-
+        Oldest,
+        Recent,
+        Total,
         Customer
     }
 }

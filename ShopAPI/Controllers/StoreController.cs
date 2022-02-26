@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using ShopBL;
@@ -27,6 +28,7 @@ namespace ShopAPI.Controllers
 
         [HttpGet]
         [SwaggerOperation(Summary="Gets all stores from the database")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetAllStores()
         {
             try
@@ -47,6 +49,7 @@ namespace ShopAPI.Controllers
 
         [HttpGet("{id}", Name = "GetStoreById")]
         [SwaggerOperation(Summary="Retrieves a store using an id")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetStoreById(int id)
         {
             try
@@ -61,6 +64,7 @@ namespace ShopAPI.Controllers
 
         [HttpPost("Add")]
         [SwaggerOperation(Summary="Adds a new store to the database")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Post([FromBody] StoreFront store)
         {
             try
@@ -75,6 +79,7 @@ namespace ShopAPI.Controllers
 
         [HttpPut]
         [SwaggerOperation(Summary="Updates store data to the database")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Put([FromBody] StoreFront store)
         {
             try
@@ -89,12 +94,12 @@ namespace ShopAPI.Controllers
 
         [HttpPost("ReplenishInventory")]
         [SwaggerOperation(Summary="Updates a store's inventory")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ReplenishInventory(int storeId, int productId, int quantity)
         {
             try
             {
-                stores.UpdateStoreInventory(storeId, productId, quantity);
-                return Ok();
+                return Ok(stores.UpdateStoreInventory(storeId, productId, quantity));
             }
             catch (Exception e)
             {
@@ -103,22 +108,23 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet("ViewOrderHistory")]
-        [SwaggerOperation(Summary="Views all ordres made in a specific store")]
+        [SwaggerOperation(Summary="Views all orders made in a specific store")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ViewOrders(int storeId, OrderSort sort)
         {
             try
             {
                 switch(sort)
                 {
-                    case OrderSort.MostRecent:
+                    case OrderSort.Recent:
                         List<Order> recent = stores.GetOrders(storeId);
                         recent.Reverse();
-                        return Ok(customers.DisplayOrderHistory(recent));
-                    case OrderSort.TotalPrice:
+                        return Ok(recent);
+                    case OrderSort.Total:
                         List<Order> total = stores.GetOrders(storeId);
                         total = total.OrderBy(order => order.Price).ToList();
                         total.Reverse();
-                        return Ok(customers.DisplayOrderHistory(total));
+                        return Ok(total);
                     case OrderSort.Customer:
                         List<Order> nameOrders = new List<Order>();
                         List<Customer> custs = new List<Customer>();
@@ -133,7 +139,7 @@ namespace ShopAPI.Controllers
                                 custs.Add(_customer);
                             }
                         }
-                        return Ok(customers.DisplayOrderHistory(nameOrders));
+                        return Ok(nameOrders);
                 }
                 return Ok(stores.GetOrders(storeId));
             }

@@ -16,7 +16,7 @@ namespace ShopModel
         }
 
         /* The total quantity of said item in cart. */
-        public int _quantity;
+        private int _quantity;
         public int Quantity
         {
             get { return _quantity; }

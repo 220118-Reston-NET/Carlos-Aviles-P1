@@ -29,7 +29,7 @@ namespace ShopBL
         /// <param name="storeId">The store's unique identification.</param>
         /// <param name="productId">The product's unique identification.</param>
         /// <param name="quantity">The amount to update</param>
-        void UpdateStoreInventory(int storeId, int productId, int quantity);
+        StoreFront UpdateStoreInventory(int storeId, int productId, int quantity);
 
         /// <summary>
         /// Gets all the stores from the database.
@@ -65,26 +65,10 @@ namespace ShopBL
         StoreFront GetStoreFront(int storeId);
 
         /// <summary>
-        /// Gets a list of similar stores by finding any that having a matching name.
-        /// </summary>
-        /// <param name="name">The store name.</param>
-        /// <returns>The list of similar stores.</returns>
-        List<StoreFront> GetSimilarStoresByName(string name);
-
-        /// <summary>
-        /// Gets a list of similar stores by finding any that having a matching address.
-        /// </summary>
-        /// <param name="address">The store address.</param>
-        /// <returns>The list of similar stores.</returns>
-        List<StoreFront> GetSimilarStoresByAddress(string address);
-
-        /// <summary>
         /// A flag that check if a store has items in stock.
         /// </summary>
         /// <param name="store">The store instance</param>
         /// <returns>If there are items in stock, it will return true</returns>
         bool hasInventory(StoreFront store);
-
-        string DisplayOrderHistory(List<Order> orders);
     }
 }

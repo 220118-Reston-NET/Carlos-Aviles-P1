@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using ShopBL;
@@ -25,6 +26,7 @@ namespace ShopAPI.Controllers
 
         [HttpGet]
         [SwaggerOperation(Summary="Gets all products from the database")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetAllProducts()
         {
             try
@@ -46,6 +48,7 @@ namespace ShopAPI.Controllers
         [Route("{id:int}")]
         [HttpGet]
         [SwaggerOperation(Summary="Retrieves a product using an id")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetProductById(int id)
         {
             try
@@ -61,6 +64,7 @@ namespace ShopAPI.Controllers
         [Route("{name}")]
         [HttpGet]
         [SwaggerOperation(Summary="Retrieves a product using a name")]
+        [Authorize(Roles = "Customer,Admin")]
         public async Task<IActionResult> GetProductByName(string name)
         {
             try

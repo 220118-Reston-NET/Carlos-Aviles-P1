@@ -29,7 +29,7 @@ namespace ShopDL
         /// <param name="storeId">The store's unique identification.</param>
         /// <param name="productId">The product's unique identification.</param>
         /// <param name="quantity">The amount to update</param>
-        void UpdateStoreInventory(int storeId, int productId, int quantity);
+        StoreFront UpdateStoreInventory(int storeId, int productId, int quantity);
 
         /// <summary>
         /// Gets all the stores from the database.

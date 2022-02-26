@@ -135,7 +135,7 @@ namespace ShopDL
             string query = @"select * from [customers_orders] as co 
                 join [Order] as o on o.id = co.orderId and co.customerId = @customerId
                 join [Store] as s on s.id = o.storeId";
-
+                
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
                 connection.Open();

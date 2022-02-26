@@ -32,9 +32,9 @@ namespace ShopBL
             return repo.UpdateStore(store);
         }
 
-        public void UpdateStoreInventory(int storeId, int productId, int quantity)
+        public StoreFront UpdateStoreInventory(int storeId, int productId, int quantity)
         {
-            repo.UpdateStoreInventory(storeId, productId, quantity);
+            return repo.UpdateStoreInventory(storeId, productId, quantity);
         }
 
         public List<StoreFront> GetStores()
@@ -62,24 +62,9 @@ namespace ShopBL
             return repo.GetStoreFront(storeId);
         }
 
-        public List<StoreFront> GetSimilarStoresByName(string name)
-        {
-            return repo.GetSimilarStoresByName(name);
-        }
-
-        public List<StoreFront> GetSimilarStoresByAddress(string address)
-        {
-            return repo.GetSimilarStoresByAddress(address);
-        }
-
         public bool hasInventory(StoreFront store)
         {
             return repo.hasInventory(store);
-        }
-
-        public string DisplayOrderHistory(List<Order> orders)
-        {
-            return repo.DisplayOrderHistory(orders);
         }
     }
 }

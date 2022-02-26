@@ -56,7 +56,7 @@ namespace Repository
                  try
                  {
                      response.Data = dbConnection.Query<T>(query, sp_params, commandType: CommandType.StoredProcedure, transaction: transaction).FirstOrDefault();
-                     response.code = sp_params.Get<int>("retVal"); //get output parameter value
+                     response.code = sp_params.Get<int>("retVal");
                      response.message = "Success";
                      transaction.Commit();
                  }
@@ -70,7 +70,7 @@ namespace Repository
              return response;
          }
   
-         public ResponseModel<List<T>> getUserList<T>()
+         public async Task<ResponseModel<List<T>>> getUserList<T>()
          {
              ResponseModel<List<T>> response = new ResponseModel<List<T>>();
              using IDbConnection db = new SqlConnection(_configuration.GetConnectionString("ShopAppDB"));

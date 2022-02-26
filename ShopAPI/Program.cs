@@ -16,6 +16,7 @@ builder.Services.AddMemoryCache();
 builder.Services.AddSwaggerGenNewtonsoftSupport();
 builder.Services.AddControllers().AddNewtonsoftJson(o =>
 {
+    o.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
     o.SerializerSettings.Converters.Add(new StringEnumConverter
     {
         CamelCaseText = true

@@ -23,8 +23,112 @@ namespace ShopDL
             this.connectionURL = connectionURL;
         }
 
+        private Customer GetCustomer(int customerId)
+        {
+            List<Customer> listOfCustomers = new List<Customer>();
+            string query = @"select * from [Customer]";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    listOfCustomers.Add(new Customer() {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Age = reader.GetInt32(2),
+                    });
+                }
+            }
+            return listOfCustomers.Where(cust => cust.Id == customerId).First();
+        }
+
+        private StoreFront GetStore(int storeId)
+        {
+            List<StoreFront> loadedStores = new List<StoreFront>();
+            string query = @"select * from [Store]";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    loadedStores.Add(new StoreFront() {
+                        Id = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        Items = GetLineItems(reader.GetInt32(0)),
+                        Address = reader.GetString(2)
+                    });
+                }
+            }
+            return loadedStores.Where(store => store.Id == storeId).First();
+        }
+
+        private List<LineItem> GetLineItems(int storeId)
+        {
+            List<LineItem> loadedItems = new List<LineItem>();
+            string query = @"select * from Store s join LineItem as si 
+                on si.storeId = s.id and s.id = @storeId join Product as p on si.productId = p.id";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@storeId", storeId);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    loadedItems.Add(new LineItem() {
+                        Product = new Product() {
+                            Id = reader.GetInt32(6),
+                            Name = reader.GetString(7),
+                            Price = reader.GetDouble(8),
+                            Description = reader.GetString(9),
+                            Category = reader.GetString(10),
+                            MinimumAge = reader.GetInt32(11)
+                        },
+                        Quantity = reader.GetInt32(5)
+                    });
+                }
+            }
+            return loadedItems;
+        }
+
         public Order PlaceOrder(int customerId, List<CartItem> item, int storeId)
         {
+            Customer customer = GetCustomer(customerId);
+            StoreFront store = GetStore(storeId);
+
+            foreach(CartItem _item in item)
+            {
+                _item.Item = GetProductFromOrder(_item.Item.Id);
+                if (!store.Items.Any(itemInStore => itemInStore.Product.Id == _item.Item.Id))
+                    throw new Exception("This item is not for sale in "+ store.Name +".");
+                if (customer.Age < _item.Item.MinimumAge)
+                    throw new Exception("Customer is less than the required age to buy this product "+ _item.Item.Name+".");
+                if(_item.Quantity <= 0)
+                    throw new Exception("Quantity has to be more than 0 for item "+ _item.Item.Name +".");
+
+                foreach(LineItem inventory in store.Items)
+                {
+                    if(inventory.Product.Id == _item.Item.Id)
+                    {
+                        if (_item.Quantity > inventory.Quantity)
+                            throw new Exception("Cannot buy more than what is in inventory for product "+ _item.Item.Name +"!");
+                    }
+                }
+            }
+
             Order order = new Order();
             string orderQuery = @"insert into [Order]
                 values(@storeId, @totalPrice, @dateCreated); SELECT SCOPE_IDENTITY();";
@@ -39,6 +143,7 @@ namespace ShopDL
                 values(@customerId, @orderId)";
 
             decimal totalPrice = (decimal) GetCartTotal(item);
+            int totalQuantity = 0;
             DateTime dateCreated = DateTime.Now;
             using (SqlConnection connection = new SqlConnection(connectionURL))
             {
@@ -64,9 +169,11 @@ namespace ShopDL
                     command.Parameters.AddWithValue("@quantity", _item.Quantity);
                     command.ExecuteNonQuery();
                     items.Add(new PurchasedItem(){
+                        OrderId = orderId,
                         Item = _item.Item,
                         Quantity = _item.Quantity
                     });
+                    totalQuantity += _item.Quantity;
                 }
 
                 //insert into stores_orders table
@@ -87,9 +194,34 @@ namespace ShopDL
                 order.Price = totalPrice;
                 order.DateCreated = dateCreated;
                 order.Items = items;
-                order.Location = ""+ storeId;
+                order.Location = store.Address;
+                order.Quantity = totalQuantity;
+            }
+            foreach(CartItem _item in item)
+            {
+                int oldQuantity = GetLineItems(storeId).Where(it => it.Product.Id == _item.Item.Id).First().Quantity;
+                int newQuantity = oldQuantity - _item.Quantity;
+                UpdateStoreInventory(storeId, _item.Item.Id, newQuantity);
             }
             return order;
+        }
+
+        private void UpdateStoreInventory(int storeId, int productId, int quantity)
+        {
+            string query = @"update LineItem set LineItem.quantity = @quantity
+                where LineItem.storeId = @storeId and LineItem.productId = @productId";
+
+            using (SqlConnection connection = new SqlConnection(connectionURL))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@storeId", storeId);
+                command.Parameters.AddWithValue("@productId", productId);
+                command.Parameters.AddWithValue("@quantity", quantity);
+                
+                command.ExecuteNonQuery();
+            }
         }
 
         public List<Order> GetOrders()
