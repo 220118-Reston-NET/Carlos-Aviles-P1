@@ -1,6 +1,6 @@
 # Carlos Aviles's StoreApp
 
-# Functionalities
+## Functionalities
 - Add a customer
 - Get a list of customers
 - Get a customer from id, username
@@ -16,7 +16,7 @@
 - Store can view order history
 - Replenish store inventory
 
-# Technologies Used
+## Technologies Used
 - C#
 - REST API
 - ASP.NET
