@@ -211,7 +211,10 @@ namespace ShopDL
                         Item = new Product() {
                             Id = reader.GetInt32(1),
                             Name = reader.GetString(6),
-                            Price = (double) reader.GetSqlDouble(7)
+                            Price = (double) reader.GetSqlDouble(7),
+                            Description = reader.GetString(8),
+                            Category = reader.GetString(9),
+                            MinimumAge = reader.GetInt32(10)
                         },
                         Quantity = reader.GetInt32(2)
                     });

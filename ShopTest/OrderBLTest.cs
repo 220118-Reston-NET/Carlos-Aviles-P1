@@ -19,6 +19,7 @@ namespace ShopTest
             int quantity = 1;
             string location = "Nutrient North";
             List<PurchasedItem> listOfPurchasedItems = new List<PurchasedItem>();
+            List<CartItem> listOfItems = new List<CartItem>();
             listOfPurchasedItems.Add(new PurchasedItem());
             Order _Order = new Order() {
                 Id = id,
@@ -44,6 +45,7 @@ namespace ShopTest
             Assert.Equal(listOfPurchasedItems, actualList[0].Items);
             Assert.Equal(quantity, actualList[0].Quantity);
             Assert.Equal(location, actualList[0].Location);
+            Assert.Equal(0, Orders.GetCartTotal(listOfItems));
         }
 
         [Fact]
@@ -78,9 +80,10 @@ namespace ShopTest
             //arrange
             int id = 1;
             int storeId = 1;
-            int quantity = 0;
-            string location = "Nutrient North";
+            int quantity = 1;
+            string location = "Southern South";
             List<CartItem> listOfItems = new List<CartItem>();
+            listOfItems.Add(new CartItem());
             Order _Order = new Order() {
                 Id = id,
                 Quantity = quantity,

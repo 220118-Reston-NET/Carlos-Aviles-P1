@@ -7,7 +7,6 @@ using Newtonsoft.Json.Converters;
 using Repository;
 using ShopBL;
 using ShopDL;
-using ShopModel;
 
 var builder = WebApplication.CreateBuilder(args);
 

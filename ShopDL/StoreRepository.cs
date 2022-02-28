@@ -25,6 +25,9 @@ namespace ShopDL
 
         public StoreFront AddStore(StoreFront store)
         {
+            if(GetStores().Any(actual => actual.Id == store.Id))
+                throw new Exception("This store id already exists in the database!");
+
             string query = @"insert into [Store]
                 values(@storeId, @storeName, @storeAddress)";
 
@@ -65,11 +68,24 @@ namespace ShopDL
 
         public StoreFront UpdateStoreInventory(int storeId, int productId, int quantity)
         {
+            if(!GetStores().Any(store => store.Id == storeId))
+                throw new Exception("This store does not exist.");
+            
             StoreFront store = GetStores().Where(store => store.Id == storeId).First();
+
             if (quantity <= 0 || quantity > 1000)
                 throw new Exception("Quantity must be more than 0 and less than 1,000!");
             if (!store.Items.Any(item => item.Product.Id == productId))
                 throw new Exception("This product does not exist in this store.");
+
+            List<LineItem> items = GetLineItems(storeId);
+            int oldQuantity = 0;
+            foreach(LineItem item in items)
+            {
+                if(item.Product.Id == productId)
+                    oldQuantity = item.Quantity;
+            }
+            int newQuantity = oldQuantity + quantity;
 
             string query = @"update LineItem set LineItem.quantity = @quantity
                 where LineItem.storeId = @storeId and LineItem.productId = @productId";
@@ -81,11 +97,11 @@ namespace ShopDL
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@storeId", storeId);
                 command.Parameters.AddWithValue("@productId", productId);
-                command.Parameters.AddWithValue("@quantity", quantity);
+                command.Parameters.AddWithValue("@quantity", newQuantity);
                 
                 command.ExecuteNonQuery();
             }
-            return store;
+            return GetStores().Where(store => store.Id == storeId).First();
         }
 
         public List<StoreFront> GetStores()
@@ -225,7 +241,10 @@ namespace ShopDL
                         Item = new Product() {
                             Id = reader.GetInt32(1),
                             Name = reader.GetString(6),
-                            Price = (double) reader.GetSqlDouble(7)
+                            Price = (double) reader.GetSqlDouble(7),
+                            Description = reader.GetString(8),
+                            Category = reader.GetString(9),
+                            MinimumAge = reader.GetInt32(10)
                         },
                         Quantity = reader.GetInt32(2)
                     });

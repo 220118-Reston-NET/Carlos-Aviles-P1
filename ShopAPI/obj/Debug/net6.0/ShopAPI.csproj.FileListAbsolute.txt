@@ -191,3 +191,39 @@
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/web 4.config
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/web 2.config
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/web 2.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/web 2.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/web 4.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/appsettings 2.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.deps.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/ShopAPI.deps 2.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/ShopAPI.runtimeconfig 2.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web 2.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web 4.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web 3.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/web 5.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/web 5.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/web 5.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/web 6.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/web 7.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/web 5.config
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/appsettings 2.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.deps 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.deps.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 3.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/ShopAPI.deps 2.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 2.json
