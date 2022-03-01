@@ -227,3 +227,5 @@
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig.json
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/ShopAPI.deps 2.json
 /Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/publish/publish/publish/publish/publish/ShopAPI.runtimeconfig 2.json
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Serilog.dll
+/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/bin/Debug/net6.0/Serilog.Sinks.File.dll

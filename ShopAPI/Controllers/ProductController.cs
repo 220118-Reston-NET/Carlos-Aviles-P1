@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Serilog;
 using ShopBL;
 using ShopModel;
 using Swashbuckle.AspNetCore.Annotations;
@@ -37,10 +38,12 @@ namespace ShopAPI.Controllers
                     listOfProducts = await products.GetProductsAsync();
                     cache.Set("productsList", listOfProducts, new TimeSpan(0,0,30));
                 }
+                 Log.Information("Successfully grabbed all products list ");
                 return Ok(products.GetProducts());
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -53,10 +56,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully got product with id "+ id);
                 return Ok(products.GetProducts().Where(p => p.Id == id));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -69,10 +74,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully got product with the name "+ name);
                 return Ok(products.GetProducts().Where(p => p.Name == name));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }

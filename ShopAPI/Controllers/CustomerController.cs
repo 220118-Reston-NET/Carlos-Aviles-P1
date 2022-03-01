@@ -2,6 +2,7 @@ using System.Runtime.Serialization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Serilog;
 using ShopBL;
 using ShopModel;
 using Swashbuckle.AspNetCore.Annotations;
@@ -40,10 +41,12 @@ namespace ShopAPI.Controllers
                     listOfCustomers = await customers.GetCustomersAsync();
                     cache.Set("customersList", listOfCustomers, new TimeSpan(0,0,30));
                 }
+                Log.Information("Successfully got all customers");
                 return Ok(customers.GetCustomers());
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -56,10 +59,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully retrieved customer with the id "+ id);
                 return Ok(customers.GetCustomerFromId(id));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -72,6 +77,7 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully retrieved customer with the name "+ name);
                 return Ok(customers.GetCustomerByName(name));
             }
             catch (Exception e)
@@ -86,10 +92,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully added customer with the name "+ customer.Name);
                 return Created("Successfully added", customers.AddCustomer(customer));
             }
             catch(Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -101,10 +109,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully updated customer with the name "+ customer.Name);
                 return Ok(customers.UpdateCustomer(customer));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -117,10 +127,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully deleted customer with the name "+ customer.Name);
                 return Ok(customers.DeleteCustomer(customer));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -132,10 +144,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully placed order for customer with id "+ customerId);
                 return Created("Created order!", orders.PlaceOrder(customerId, items, storeId));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return StatusCode(422, e.Message);
             }
         }
@@ -166,6 +180,7 @@ namespace ShopAPI.Controllers
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }

@@ -5,9 +5,11 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using Repository;
+using Serilog;
 using ShopBL;
 using ShopDL;
 
+Log.Logger = new LoggerConfiguration().WriteTo.File("./logs/user.txt").CreateLogger();
 var builder = WebApplication.CreateBuilder(args);
 
 

@@ -3,6 +3,7 @@ using Dapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
+using Serilog;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace ShopAPI.Controllers
@@ -24,7 +25,7 @@ namespace ShopAPI.Controllers
         [HttpPost("Register")]
         [SwaggerOperation(Summary="Registers a new customer/login user")]
         [AllowAnonymous]
-        public IActionResult Register([FromQuery]UserModel user)
+        public IActionResult Register([FromBody]UserModel user)
         {
             if (!ModelState.IsValid)
             {
@@ -39,8 +40,10 @@ namespace ShopAPI.Controllers
             var result = _authentication.Execute_Command<UserModel>("sp_registerUser", dp_param);
             if (result.code == 200)
             {
+                Log.Information(result.message);
                 return Ok(result);
             }
+            Log.Warning(result.message);
             return BadRequest(result);
         }
 
@@ -62,8 +65,10 @@ namespace ShopAPI.Controllers
             if (result.code == 200)
             {
                 var token = _authentication.GenerateJWT(result.Data);
+                Log.Information(token.message);
                 return Ok(token);
             }
+            Log.Warning(result.message);
             return NotFound(result.Data);
         }
 
@@ -84,18 +89,11 @@ namespace ShopAPI.Controllers
             var result = _authentication.Execute_Command<UserModel>("sp_GiveAdminUser", dp_param);
             if (result.code == 200)
             {
+                Log.Information(result.message);
                 return Ok(result);
             }
+            Log.Warning(result.message);
             return NotFound(result);
-        }
-
-        [HttpGet("UserList")]
-        [SwaggerOperation(Summary="Gets a list of all the api users")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> getAllUsers()
-        {
-            var result = _authentication.getUserList<UserModel>();
-            return Ok(result);
         }
 
         [HttpDelete("Delete")]
@@ -115,8 +113,10 @@ namespace ShopAPI.Controllers
             var result = _authentication.Execute_Command<UserModel>("sp_deleteUser", dp_param);
             if (result.code == 200)
             {
+                Log.Information(result.message);
                 return Ok(result);
             }
+            Log.Warning(result.message);
             return NotFound(result);
         } 
     }

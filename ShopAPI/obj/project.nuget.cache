@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CzFwhvo/ZKmGkrNDzwihFHbV3lWs6Plmw+QqCJon642rhXFNeyUQdM4wBGZFx2NSdnTPhzBvTUi0FDh8vxsHnQ==",
+  "dgSpecHash": "coAZub6rRWyjBF3ndfHrMl2Hxf++tsm9srz07gLEbgZLrQcyTW16hKZGqKk17byfQlKJqvv4mtwET7JZNTUUlg==",
   "success": true,
   "projectFilePath": "/Users/carlosaviles/Documents/Revature/C#/Project1/ShopAPI/ShopAPI.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,8 @@
     "/Users/carlosaviles/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "/Users/carlosaviles/.nuget/packages/serilog/2.10.0/serilog.2.10.0.nupkg.sha512",
+    "/Users/carlosaviles/.nuget/packages/serilog.sinks.file/5.0.0/serilog.sinks.file.5.0.0.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/swashbuckle.aspnetcore.annotations/6.2.3/swashbuckle.aspnetcore.annotations.6.2.3.nupkg.sha512",
     "/Users/carlosaviles/.nuget/packages/swashbuckle.aspnetcore.newtonsoft/6.2.3/swashbuckle.aspnetcore.newtonsoft.6.2.3.nupkg.sha512",

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Serilog;
 using ShopBL;
 using ShopModel;
 using Swashbuckle.AspNetCore.Annotations;
@@ -39,10 +40,12 @@ namespace ShopAPI.Controllers
                     listOfStores = await stores.GetStoresAsync();
                     cache.Set("storesList", listOfStores, new TimeSpan(0, 0, 30));
                 }
+                Log.Information("Successfully grabed all stores list.");
                 return Ok(stores.GetStores());
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -54,10 +57,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully grabed store with the id "+ id);
                 return Ok(stores.GetStoreFront(id));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
@@ -69,10 +74,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully created a new store "+ store.Name);
                 return Created("Successfully added", stores.AddStore(store));
             }
             catch(Exception e)
             {
+                Log.Warning(e.Message);
                 return StatusCode(422, e.Message);
             }
         }
@@ -84,10 +91,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully updated store "+ store.Name);
                 return Ok(stores.UpdateStore(store));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return StatusCode(422, e.Message);
             }
         }
@@ -99,10 +108,12 @@ namespace ShopAPI.Controllers
         {
             try
             {
+                Log.Information("Successfully replenished inventory for store with id "+ storeId);
                 return Ok(stores.UpdateStoreInventory(storeId, productId, quantity));
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return StatusCode(422, e.Message);
             }
         }
@@ -145,6 +156,7 @@ namespace ShopAPI.Controllers
             }
             catch (Exception e)
             {
+                Log.Warning(e.Message);
                 return NotFound();
             }
         }
