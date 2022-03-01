@@ -46,7 +46,7 @@ namespace ShopAPI.Controllers
             catch (Exception e)
             {
                 Log.Warning(e.Message);
-                return NotFound();
+                return StatusCode(422, e.Message);
             }
         }
 
@@ -63,7 +63,7 @@ namespace ShopAPI.Controllers
             catch (Exception e)
             {
                 Log.Warning(e.Message);
-                return NotFound();
+                return StatusCode(422, e.Message);
             }
         }
 
@@ -157,7 +157,7 @@ namespace ShopAPI.Controllers
             catch (Exception e)
             {
                 Log.Warning(e.Message);
-                return NotFound();
+                return StatusCode(422, e.Message);
             }
         }
 

@@ -211,7 +211,8 @@ namespace ShopDL
                         Items = GetPurchasedItems(reader.GetInt32(1)),
                         Quantity = GetTotalQuantityFromOrder(GetPurchasedItems(reader.GetInt32(1))),
                         Price = (decimal) reader.GetSqlMoney(4),
-                        DateCreated = reader.GetDateTime(5)
+                        DateCreated = reader.GetDateTime(5),
+                        Location = reader.GetString(8)
                     });
                 }
             }

@@ -1,3 +1,20 @@
 2022-03-01 08:48:22.348 -05:00 [INF] Success
 2022-03-01 08:48:48.729 -05:00 [INF] Token generated
 2022-03-01 08:49:52.835 -05:00 [INF] Successfully got all customers
+2022-03-01 11:39:46.361 -05:00 [INF] Token generated
+2022-03-01 11:40:15.556 -05:00 [INF] Token generated
+2022-03-01 11:40:23.855 -05:00 [INF] Successfully got all customers
+2022-03-01 14:30:07.358 -05:00 [INF] Token generated
+2022-03-01 14:30:28.444 -05:00 [INF] Successfully placed order for customer with id 8
+2022-03-01 14:30:28.493 -05:00 [WRN] You must have at-least one quantity for Water Bottle!
+2022-03-01 14:30:44.838 -05:00 [INF] Successfully placed order for customer with id 8
+2022-03-01 14:30:44.884 -05:00 [WRN] You must have at-least one quantity for Coca cola!
+2022-03-01 14:30:51.312 -05:00 [INF] Successfully placed order for customer with id 8
+2022-03-01 14:34:51.323 -05:00 [INF] Token generated
+2022-03-01 16:03:54.517 -05:00 [INF] Successfully grabbed all products list 
+2022-03-01 16:07:31.559 -05:00 [INF] Token generated
+2022-03-01 16:08:48.861 -05:00 [INF] Successfully grabbed all products list 
+2022-03-01 16:09:22.549 -05:00 [INF] Successfully got product with id 1
+2022-03-01 16:15:49.656 -05:00 [INF] Successfully got product with the name Water Bottle
+2022-03-01 16:16:03.709 -05:00 [INF] Successfully got product with the name Water Bottl
+2022-03-01 16:20:23.528 -05:00 [INF] Successfully replenished inventory for store with id 1
